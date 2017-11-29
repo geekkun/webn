@@ -1,0 +1,32 @@
+{% extends "mainapp/base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+<script src="{% static 'mainapp/jquery-1.11.2.js' %}"></script>
+<script src="{% static 'mainapp/ajax.js' %}"></script>
+
+<span class='info'>&#8658; You must be logged in to view this page.</span>
+<br>
+<br>
+<div class='main'>
+    {% if loggedin %}
+        You are now logged in.
+        Please <a href='/member/'>click here</a> to continue.
+        <br><br>
+    {% else %}
+        <h3>Please enter your details to login</h3>
+        <form method='POST' action='/login/'>
+        	{% csrf_token %}
+            <span class='fieldname'>Username</span>
+            <input type='text' maxlength='16' id='logusername' name='username'>
+            <span id='info'></span>
+            <br>
+            <span class='fieldname'>Password</span>
+            <input type='text' maxlength='16' name='password'><br>
+            <span class='fieldname'>&nbsp;</span>
+            <input type='submit' value='Login'>
+        </form>
+    {% endif %}
+</div>
+{% endblock %}

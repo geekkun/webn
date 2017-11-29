@@ -1,0 +1,39 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ appname }}</title>
+	<!--<link rel="stylesheet" type="text/css" href="{% static 'mainapp/styles.css' %}" />-->
+</head>
+<body>
+	<center>
+	<canvas id='logo' width='624' height='96'> {{ appname }} </canvas>
+	</center>
+	{% if loggedin %}
+    <div class='appname'>{{ appname }} ({{ username }}) </div>
+	{% else %}
+    <div class='appname'>{{ appname }}</div>
+    {% endif %}
+    <script src="{% static 'mainapp/scripts.js' %}"></script>
+	<br>
+	<ul class='menu'>
+		{% if loggedin %}
+        <li><a href='/members/?view={{ username }}'>Home</a></li>
+        <li><a href='/members/'>Members</a></li>
+        <li><a href='/friends/'>Friends</a></li>
+        <li><a href='/messages/'>Messages</a></li>
+        <li><a href='/profile/'>Edit Profile</a></li>
+        <li><a href='/logout/'>Log out</a></li></ul><br>	
+		{% else %}
+		<li><a href='/'>Home</a></li>
+		<li><a href='/signup/'>Sign up</a></li>
+		<li><a href='/login/'>Log in</a></li>
+		{% endif %}
+	</ul>
+	<br>
+	{% block content %}
+	{% endblock %}
+	<br>
+</body>
+</html>
