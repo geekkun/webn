@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from theapp.models import AppUser, Comments, Likes, Dislikes
+from theapp.models import AppUser, Comments, Likes, Dislikes, Article
 from django.http import HttpResponse, Http404
+from django.views import generic
+from django.template import loader
 
 
 appname = 'Newspaper'
