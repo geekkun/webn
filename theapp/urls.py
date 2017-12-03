@@ -19,4 +19,10 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+    # login page
+    url(r'^login/$', views.login, name='login'),
+    # logout page
+    url(r'^logout/$', views.logout, name='logout'),
+    # Ajax: check if user exists on login page
+    url(r'^logcheckuser/$', views.logCheckUser, name='logCheckUser'),
 ]

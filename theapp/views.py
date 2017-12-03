@@ -22,7 +22,7 @@ def loggedin(f):
 def login(request):
     if 'username' not in request.POST:
         context = { 'appname': appname }
-        return render(request, 'mainapp/login.html', context)
+        return render(request, 'theapp/login.html', context)
     else:
         u = request.POST['username']
         p = request.POST['password']
@@ -33,7 +33,7 @@ def login(request):
         if p == member.password:
             request.session['username'] = u;
             request.session['password'] = p;
-            return render(request, 'mainapp/login.html', {
+            return render(request, 'theapp/login.html', {
                 'appname': appname,
                 'username': u,
                 'loggedin': True}
@@ -50,7 +50,7 @@ def logout(request):
             'appname': appname,
             'username': u
         }
-        return render(request, 'mainapp/logout.html', context)
+        return render(request, 'theapp/logout.html', context)
     else:
         raise Http404("Can't logout, you are not logged in")
 
