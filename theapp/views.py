@@ -64,3 +64,34 @@ def logCheckUser(request):
             return HttpResponse("<span class='taken'>&nbsp;&#x2718; Unknown username</span>")
     else:
         return HttpResponse("")
+
+    
+class NewsListView(generic.ListView):
+    model = Article
+    context_object_name = "articles"
+    queryset = Article.objects.all()
+    template_name = "news.html"
+
+    def news(request):
+        template = loader.get_template('news.html')
+        articles = Article.objects.all()
+        context = {
+            'articles': articles
+        }
+        return HttpResponse(template.render(context,request))
+
+    def sport(request):
+        template = loader.get_template('news.html')
+        articles = Article.objects.filter(category="Sport")
+        context = {
+            'articles': articles
+        }
+        return HttpResponse(template.render(context, request))
+
+    def business(request):
+        template = loader.get_template('news.html')
+        articles = Article.objects.filter(category='SP')
+        context = {
+            'articles': articles
+        }
+        return HttpResponse(template.render(context, request))
