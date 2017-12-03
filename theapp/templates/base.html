@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'theapp/style.css' %}">
+</head>
+<body>
+    {% block menu %}
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#bs">Business</a></li>
+            <li><a href="#sp">Sport</a></li>
+        </ul>
+    {% endblock menu %}
+    {% block content %}{% endblock content %}
+</body>
+</html>

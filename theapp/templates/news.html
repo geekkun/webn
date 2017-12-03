@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>All news</h2>   {#  make changable  #}
+
+    {% for object in articles %}
+        <a href="#"><h3> {{ object.title }}</h3></a>
+        <a href="#"><h5>{{ object.get_category_display }}</h5></a>{#    get_FOO_display()   #}
+        <p>{{ object.body }}</p>
+        </br>
+    {% endfor %}
+{% endblock content %}
