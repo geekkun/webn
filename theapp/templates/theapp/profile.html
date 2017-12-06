@@ -1,0 +1,24 @@
+{% extends "theapp/base.html" %}
+
+{% block content %}
+<div class='main'>
+{% if text %}
+<h3>Your Profile</h3>
+{{ phone }} <br style='clear:left;'><br>
+{% endif %}
+<form method='POST' action='/profile/' enctype='multipart/form-data'>
+  	{% csrf_token %}
+	<h3>Enter or edit your details </h3>
+	<span class='fieldname'>Email address</span>
+            <input type='text' maxlength='50' id='logusername' name='username' value={{email_addr}}>
+	<br>
+	<span class='fieldname'>Phone number</span>
+	        <input type='text' maxlength='50' id='loguserphone' name='phone' value={{phone}}>
+	<br>
+	<span class='fieldname'>Name</span>
+	        <input type='text' maxlength='50' id='name' name='username' value={{name}}>
+	<br>
+   <input type='submit' value='Save Profile'>
+</form>
+</div>
+{% endblock %}
