@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from theapp.models import AppUser, Comments, Likes, Dislikes, Article
 from django.http import HttpResponse, Http404
 from django.views import generic
@@ -21,8 +21,8 @@ def registerUser(request):
         phone = request.POST["phone"]
         user = AppUser(email = email, password = hashlib.sha224(password.encode('utf-8')).hexdigest(), name = name, phone = phone)
         user.save()
-        context = {"message":"Registration has been successful, you can now log in."}
-        return render(request, 'theapp/login.html', context)
+        mymessage = {"message":"Registration has been successful, you can now log in."}
+        return redirect("/login/", context = mymessage)
     else:
         return HttpResponse('Failed')
 
@@ -119,10 +119,10 @@ class NewsListView(generic.ListView):
     model = Article
     context_object_name = "articles"
     queryset = Article.objects.all()
-    template_name = "news.html"
+    template_name = "theapp/news.html"
 
     def news(request):
-        template = loader.get_template('news.html')
+        template = loader.get_template('theapp/news.html')
         articles = Article.objects.all()
         context = {
             'articles': articles
@@ -130,7 +130,7 @@ class NewsListView(generic.ListView):
         return HttpResponse(template.render(context,request))
 
     def sport(request):
-        template = loader.get_template('news.html')
+        template = loader.get_template('theapp/news.html')
         articles = Article.objects.filter(category="Sport")
         context = {
             'articles': articles
@@ -138,7 +138,7 @@ class NewsListView(generic.ListView):
         return HttpResponse(template.render(context, request))
 
     def business(request):
-        template = loader.get_template('news.html')
+        template = loader.get_template('theapp/news.html')
         articles = Article.objects.filter(category='SP')
         context = {
             'articles': articles
