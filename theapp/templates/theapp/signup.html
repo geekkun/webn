@@ -6,29 +6,30 @@
 <script src="{% static 'mainapp/jquery-1.11.2.js' %}"></script>
 <script src="{% static 'mainapp/ajax.js' %}"></script>
 
-<span class='info'>&#8658; You must be logged in to view this page.</span>
 <br>
 <br>
 
 <div class="container" style="margin: 0 auto; width: 75%; text-align: center">
    <h3>Please enter your details to sign up</h3>
 <form method='POST' action='/register/'>
+      	{% csrf_token %}
+
   <div class="form-row">
     <div class="col-auto">
       <label class="sr-only" for="email">Email</label>
-      <input type="text" class="form-control mb-2 mb-sm-0" id="email" placeholder="Enter Email">
+      <input type="text" class="form-control mb-2 mb-sm-0" id="email" name="email" placeholder="Enter Email">
     </div>
     <div class="col-auto">
       <label class="sr-only" for="password">Password</label>
-       <input type="password" class="form-control" id="password" placeholder="Enter Password">
+       <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
     </div>
      <div class="col-auto">
       <label class="sr-only" for="name">Name</label>
-      <input type="text" class="form-control mb-2 mb-sm-0" id="name" placeholder="Enter Name">
+      <input type="text" class="form-control mb-2 mb-sm-0" id="name" name="name" placeholder="Enter Name">
     </div>
       <div class="col-auto">
       <label class="sr-only" for="phone">Name</label>
-      <input type="text" class="form-control mb-2 mb-sm-0" id="phone" placeholder="Enter Phone">
+      <input type="text" class="form-control mb-2 mb-sm-0" id="phone" name="phone" placeholder="Enter Phone">
     </div>
     <div class="col-auto">
 

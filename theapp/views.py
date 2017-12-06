@@ -19,10 +19,12 @@ def registerUser(request):
         password = request.POST["password"]
         name = request.POST["name"]
         phone = request.POST["phone"]
-        user = AppUser(username = email, password = password, name = name, phone = phone)
+        user = AppUser(email = email, password = hashlib.sha224(password.encode('utf-8')).hexdigest(), name = name, phone = phone)
         user.save()
-        context = {"Registration has been successful, you can now log in."}
-        return render(request, 'theapp/login.html')
+        context = {"message":"Registration has been successful, you can now log in."}
+        return render(request, 'theapp/login.html', context)
+    else:
+        return HttpResponse('Failed')
 
 # decorator that tests whether user is logged in
 def loggedin(f):
