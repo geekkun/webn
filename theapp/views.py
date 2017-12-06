@@ -13,6 +13,17 @@ appname = 'Newspaper'
 def index(request):
     return render(request, 'theapp/signup.html')
 
+def registerUser(request):
+    if 'email' in request.POST:
+        email = request.POST["email"]
+        password = request.POST["password"]
+        name = request.POST["name"]
+        phone = request.POST["phone"]
+        user = AppUser(username = email, password = password, name = name, phone = phone)
+        user.save()
+        context = {"Registration has been successful, you can now log in."}
+        return render(request, 'theapp/login.html')
+
 # decorator that tests whether user is logged in
 def loggedin(f):
     def test(request):
