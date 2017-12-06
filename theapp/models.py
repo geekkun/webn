@@ -2,16 +2,15 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth.validators import ASCIIUsernameValidator
 # from django_comments.models import Comment
-from django.contrib.auth.models import AbstractBaseUser
+
 # Create your models here.
-class AppUser(AbstractBaseUser):
+class AppUser(models.Model):
     def __str__(self):
         return self.email
     email= models.CharField(max_length=30,primary_key=True)
-    name = models.CharField(max_length=40)
+    password = models.CharField(max_length=20)
+    name = models.CharField(max_length=15)
     phone = models.CharField(max_length=15)
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['email', 'name', 'phone']
 
 
 class Article(models.Model):
