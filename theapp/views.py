@@ -69,6 +69,38 @@ def logCheckUser(request):
     else:
         return HttpResponse("")
 
+@loggedin
+def profile(request):
+    u = request.session['username']
+    member = AppUser.objects.get(pk=u)
+    phone=member.phone
+    email_addr=member.email
+    name=member.name
+    # if 'text' in request.POST:
+    #     text = request.POST['text']
+    #     if member.profile:
+    #         member.profile.text = text
+    #         member.profile.save()
+    #     else:
+    #         profile = Profile(text=text)
+    #         profile.save()
+    #         member.profile = profile
+    #     member.save()
+    # else:
+    #     if member.profile:
+    #         text = member.profile.text
+    #     else:
+    #         text = ""
+    print(email_addr)
+    return render(request, 'theapp/profile.html', {
+        'appname': appname,
+        'username': u,
+        'phone' : phone,
+        'email_addr':email_addr,
+        'name':name,
+        'loggedin': True}
+        )
+
     
 class NewsListView(generic.ListView):
     model = Article

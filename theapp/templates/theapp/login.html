@@ -3,18 +3,19 @@
 
 <script src="{% static 'theapp/ajax.js' %}"></script>
 
-<span class='info'>&#8658; You must be logged in to view this page.</span>
 <br>
 <br>
 <div class='main'>
     {% if loggedin %}
     You are now logged in.
-    Sooka
+    Please <a href='/news/'>click here</a> to go to the news or <a href='/profile/'>click here</a> to check your profile.
+        <br><br>
     {% else %}
+    {{context}}
         <h3>Please enter your details to login</h3>
         <form method='POST' action='/login/'>
         	{% csrf_token %}
-            <span class='fieldname'>Username</span>
+            <span class='fieldname'>Email address</span>
             <input type='text' maxlength='50' id='logusername' name='username'>
             <span id='info'></span>
             <br>
