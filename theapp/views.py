@@ -36,6 +36,13 @@ def loggedin(f):
     return test
 
 def login(request):
+    if 'username' in request.session:
+        print('user is already logged in')
+        return render(request, 'theapp/login.html', {
+            'appname': appname,
+            'loggedin': True}
+                      )
+
     if 'username' not in request.POST:
         context = { 'appname': appname }
         return render(request, 'theapp/login.html', context)
