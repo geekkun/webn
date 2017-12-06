@@ -19,6 +19,8 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+    #register page
+    url(r'^register/$', views.registerUser, name='registerUser'),
     # login page
     url(r'^login/$', views.login, name='login'),
     # logout page
