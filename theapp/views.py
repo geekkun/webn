@@ -3,6 +3,7 @@ from theapp.models import AppUser, Comments, Likes, Dislikes, Article
 from django.http import HttpResponse, Http404
 from django.views import generic
 from django.template import loader
+import hashlib
 
 
 appname = 'Newspaper'
@@ -27,7 +28,7 @@ def login(request):
         return render(request, 'theapp/login.html', context)
     else:
         u = request.POST['username']
-        p = request.POST['password']
+        p = hashlib.sha224((request.POST['password']).encode('utf-8')).hexdigest()
         try:
             member = AppUser.objects.get(pk=u)
         except AppUser.DoesNotExist:
@@ -41,7 +42,8 @@ def login(request):
                 'loggedin': True}
             )
         else:
-            return HttpResponse("Wrong password")
+            print (p)
+            return HttpResponse("Wrong password test")
 
 @loggedin
 def logout(request):

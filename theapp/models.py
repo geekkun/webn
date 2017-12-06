@@ -8,7 +8,7 @@ class AppUser(models.Model):
     def __str__(self):
         return self.email
     email= models.CharField(max_length=30,primary_key=True)
-    password = models.CharField(max_length=20)
+    password = models.CharField(max_length=256)
     name = models.CharField(max_length=15)
     phone = models.CharField(max_length=15)
 
