@@ -129,7 +129,7 @@ class NewsListView(generic.ListView):
     template_name = "news.html"
 
     def news(request):
-        template = loader.get_template('news.html')
+        template = loader.get_template('theapp/news.html')
         articles = Article.objects.all()
         context = {
             'articles': articles
@@ -137,7 +137,7 @@ class NewsListView(generic.ListView):
         return HttpResponse(template.render(context,request))
 
     def sport(request):
-        template = loader.get_template('news.html')
+        template = loader.get_template('theapp/news.html')
         articles = Article.objects.filter(category="Sport")
         context = {
             'articles': articles
@@ -145,7 +145,7 @@ class NewsListView(generic.ListView):
         return HttpResponse(template.render(context, request))
 
     def business(request):
-        template = loader.get_template('news.html')
+        template = loader.get_template('theapp/news.html')
         articles = Article.objects.filter(category='SP')
         context = {
             'articles': articles
