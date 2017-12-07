@@ -1,6 +1,7 @@
-
+{% extends "theapp/newBase.html" %}
 {% load staticfiles %}
 
+{% block content %}
 <script src="{% static 'theapp/ajax.js' %}"></script>
 
 <br>
@@ -27,3 +28,4 @@
     {% endif %}
 </div>
 
+{% endblock content %}
