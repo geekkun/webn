@@ -1,5 +1,4 @@
-{% extends "theapp/base.html" %}
-
+{% extends "theapp/newBase.html" %}
 {% block content %}
 <div class='main'>
 {% if text %}
@@ -10,7 +9,7 @@
   	{% csrf_token %}
 	<h3>Enter or edit your details </h3>
 	<span class='fieldname'>Email address</span>
-            <input type='text' maxlength='50' id='logusername' name='username' value={{email_addr}}>
+            <input type='text' maxlength='50' id='logusername' name='email' value={{email_addr}}>
 	<br>
 	<span class='fieldname'>Phone number</span>
 	        <input type='text' maxlength='50' id='loguserphone' name='phone' value={{phone}}>
@@ -18,7 +17,38 @@
 	<span class='fieldname'>Name</span>
 	        <input type='text' maxlength='50' id='name' name='username' value={{name}}>
 	<br>
-   <input type='submit' value='Save Profile'>
+	<br>
+	<br>
+	<span class='fieldname'>To change your password, enter the following: </span>
+	<span class='fieldname'>Old password</span>
+	        <input type='password' maxlength='50' id='op' name='old_password' autocomplete='off'>
+	<br>
+	<span class='fieldname'>New password</span>
+	        <input type='password' maxlength='50' id='np' name='new_password'>
+		<br>
+	<span class='fieldname'>Confirm new password</span>
+	        <input type='password' maxlength='50' id='np_confirm' name='new_password_confirm'>
+	  <span id='message'></span>
+
+   <input type='submit' id="submit_but" value='Save Profile' disabled>
 </form>
+	<script>
+	$(function(){
+		$('#np, #np_confirm').on('keyup', function () {
+		    console.log('Here sooka')
+		if ($('#np').val() == $('#np_confirm').val()&&$('#np').val()!='') {
+		 $('#message').html('Matching').css('color', 'green');
+		 $('#submit_but').removeAttr("disabled");
+		}
+		else{
+			$('#message').html('Not Matching').css('color', 'red');
+			$('#submit_but').attr("disabled",'disabled');
+		    }
+
+
+		});
+	});
+</script>
 </div>
 {% endblock %}
+

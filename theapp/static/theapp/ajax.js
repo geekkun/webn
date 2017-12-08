@@ -1,4 +1,5 @@
 $(function(){
+    console.log('Here sooka')
 	$('#regusername').blur(function(){
 		$.ajax({
 			type: 'POST',
@@ -11,21 +12,15 @@ $(function(){
 			dataType: 'html'
 		});
 	});
-	$('#logusername').blur(function(){
-		$.ajax({
-			type: 'POST',
-			url: '/logcheckuser/',
-			data : {
-				'username' : $('#logusername').val(),
-				'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
-			},
-			success: checkuseranswer,
-			dataType: 'html'
-		});
-	});
+
+    $('#np, #np_confirm').on('keyup', function () {
+        if ($('#np').val() == $('#np_confirm').val()) {
+         $('#message').html('Matching').css('color', 'green');
+        }
+        else
+            $('#message').html('Not Matching').css('color', 'red');
+    });
+
 });
 
-function checkuseranswer(data, textStatus, jqHXR)
-{
-	$('#info').html(data);
-}
+

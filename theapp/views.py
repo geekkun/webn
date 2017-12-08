@@ -96,22 +96,16 @@ def profile(request):
     phone=member.phone
     email_addr=member.email
     name=member.name
-    # if 'text' in request.POST:
-    #     text = request.POST['text']
-    #     if member.profile:
-    #         member.profile.text = text
-    #         member.profile.save()
-    #     else:
-    #         profile = Profile(text=text)
-    #         profile.save()
-    #         member.profile = profile
-    #     member.save()
-    # else:
-    #     if member.profile:
-    #         text = member.profile.text
-    #     else:
-    #         text = ""
-    print(email_addr)
+    if 'username' in request.POST:
+        # if user posted changes. it doesnt have to be username, but username only will do
+        name = request.POST['username']
+        email = request.POST['email']
+        phone = request.POST['phone']
+        member.email = email
+        member.phone=phone
+        member.name=name
+        member.save()
+
     return render(request, 'theapp/profile.html', {
         'appname': appname,
         'username': u,
