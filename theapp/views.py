@@ -126,7 +126,7 @@ def news(request):
 
 def sport(request):
     template = loader.get_template('theapp/news.html')
-    articles = Article.objects.filter(category="Sport")
+    articles = Article.objects.filter(category="SP")
     context = {
         'articles': articles
     }
@@ -134,7 +134,7 @@ def sport(request):
 
 def business(request):
     template = loader.get_template('theapp/news.html')
-    articles = Article.objects.filter(category='SP')
+    articles = Article.objects.filter(category='BS')
     context = {
         'articles': articles
     }

@@ -21,17 +21,17 @@
       <a class="navbar-brand" href="#">News Website</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Business</a></li>
-      <li><a href="#">Sport</a></li>
+     <li class="active"><li><a href="/news/">Home</a></li>
+            <li><a href="/news/bs/">Business</a></li>
+            <li><a href="/news/sp/">Sport</a></li>
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
         {% if loggedin %}
         <li><a href="#"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
         {% else %}
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a href="/signup/"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="/login/"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         {% endif %}
     </ul>
   </div>
