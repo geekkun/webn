@@ -116,32 +116,30 @@ def profile(request):
         )
 
     
-class NewsListView(generic.ListView):
-    model = Article
-    context_object_name = "articles"
-    queryset = Article.objects.all()
-    template_name = "theapp/news.html"
+def news(request):
+    template = loader.get_template('theapp/news.html')
+    articles = Article.objects.all()
+    context = {
+        'articles': articles
+    }
+    return HttpResponse(template.render(context,request))
 
-    def news(request):
-        template = loader.get_template('theapp/news.html')
-        articles = Article.objects.all()
-        context = {
-            'articles': articles
-        }
-        return HttpResponse(template.render(context,request))
+def sport(request):
+    template = loader.get_template('theapp/news.html')
+    articles = Article.objects.filter(category="Sport")
+    context = {
+        'articles': articles
+    }
+    return HttpResponse(template.render(context, request))
 
-    def sport(request):
-        template = loader.get_template('theapp/news.html')
-        articles = Article.objects.filter(category="Sport")
-        context = {
-            'articles': articles
-        }
-        return HttpResponse(template.render(context, request))
+def business(request):
+    template = loader.get_template('theapp/news.html')
+    articles = Article.objects.filter(category='SP')
+    context = {
+        'articles': articles
+    }
+    return HttpResponse(template.render(context, request))
 
-    def business(request):
-        template = loader.get_template('theapp/news.html')
-        articles = Article.objects.filter(category='SP')
-        context = {
-            'articles': articles
-        }
-        return HttpResponse(template.render(context, request))
+def article(request, article_id):
+    article = get_object_or_404(Article, pk=article_id)
+    return render(request, 'theapp/article.html', {'article': article})
