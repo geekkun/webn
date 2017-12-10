@@ -9,10 +9,14 @@
         <h2>Business news</h2>
     {% endif %}
 
+    <div class="row">
     {% for object in articles %}
+        <div class="col-xs-12 col-sm-6 col-md-8">
         <a href="/news/{{ object.id }}"><h3> {{ object.title }}</h3></a>
         <a href="/news/{{ object.category }}"><h5>{{ object.get_category_display }}</h5></a>{#    get_FOO_display()   #}
-        <p>{{ object.body }}</p>
-        </br>
+        <p>{{ object.body |truncatechars:30 }}</p>
+        </div>
+
     {% endfor %}
+    </div>
 {% endblock content %}
