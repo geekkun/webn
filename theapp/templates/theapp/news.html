@@ -1,7 +1,13 @@
 {% extends "theapp/base.html" %}
 
 {% block content %}
-    <h2>All news</h2>   {#  make changable  #}
+    {% if request.get_full_path == '/news/' %}
+        <h2>All news</h2>
+    {% elif request.get_full_path == '/news/sp/' or request.get_full_path == '/news/SP/' %}
+        <h2>Sport news</h2>
+    {% elif request.get_full_path == '/news/bs/' or request.get_full_path == '/news/BS/' %}
+        <h2>Business news</h2>
+    {% endif %}
 
     {% for object in articles %}
         <a href="/news/{{ object.id }}"><h3> {{ object.title }}</h3></a>
