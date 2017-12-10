@@ -29,8 +29,8 @@ urlpatterns = [
     url(r'^logcheckuser/$', views.logCheckUser, name='logCheckUser'),
     
     url(r'^news/$', views.NewsListView.news),
-    url(r'^news/sp', views.NewsListView.sport),
-    url(r'^news/bs', views.NewsListView.business),
+    url(r'^(?i)news/sp', views.NewsListView.sport),
+    url(r'^(?i)news/bs', views.NewsListView.business),
     url(r'^news/(?P<article_id>[0-9]+)/$', views.article),
     
     url(r'^profile/$', views.profile, name='profile'),
