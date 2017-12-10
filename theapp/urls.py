@@ -31,6 +31,9 @@ urlpatterns = [
     url(r'^news/$', views.NewsListView.news),
     url(r'^news/sp', views.NewsListView.sport),
     url(r'^news/bs', views.NewsListView.business),
+    url(r'^news/(?P<article_id>[0-9]+)/$', views.article),
+    
     url(r'^profile/$', views.profile, name='profile'),
+    
 
 ]
