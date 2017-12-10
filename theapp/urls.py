@@ -28,7 +28,7 @@ urlpatterns = [
     # Ajax: check if user exists on login page
     url(r'^logcheckuser/$', views.logCheckUser, name='logCheckUser'),
     
-    url(r'^news/', views.NewsListView.news),
+    url(r'^news/$', views.NewsListView.news),
     url(r'^news/sp', views.NewsListView.sport),
     url(r'^news/bs', views.NewsListView.business),
     url(r'^profile/$', views.profile, name='profile'),
