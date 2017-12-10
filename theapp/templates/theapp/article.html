@@ -2,6 +2,6 @@
 
 {% block content %}
     <h3>{{ article.title }}</h3>
-    <a href="#"><h5>{{ article.get_category_display }}</h5></a>
+    <a href="/news/{{ object.category }}"><h5>{{ article.get_category_display }}</h5></a>
     <p>{{ article.body }}</p>
 {% endblock content %}
