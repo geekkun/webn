@@ -4,9 +4,7 @@
     <list default="true" id="0940f7de-ce87-48f1-a10d-7402d4d857c4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theapp/static/theapp/ajax.js" afterPath="$PROJECT_DIR$/theapp/static/theapp/ajax.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theapp/templates/theapp/login.html" afterPath="$PROJECT_DIR$/theapp/templates/theapp/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theapp/templates/theapp/newBase.html" afterPath="$PROJECT_DIR$/theapp/templates/theapp/newBase.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theapp/models.py" afterPath="$PROJECT_DIR$/theapp/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theapp/templates/theapp/profile.html" afterPath="$PROJECT_DIR$/theapp/templates/theapp/profile.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theapp/views.py" afterPath="$PROJECT_DIR$/theapp/views.py" />
     </list>
@@ -22,18 +20,8 @@
       <file leaf-file-name="profile.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/theapp/templates/theapp/profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="52" column="18" lean-forward="false" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Documents/webProject/OLD/cw1/myapp/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="41" column="50" lean-forward="false" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
+            <state relative-caret-position="293">
+              <caret line="47" column="13" lean-forward="true" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -42,11 +30,21 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/theapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1980">
-              <caret line="138" column="29" lean-forward="false" selection-start-line="138" selection-start-column="29" selection-end-line="138" selection-end-column="29" />
+            <state relative-caret-position="434">
+              <caret line="105" column="26" lean-forward="true" selection-start-line="105" selection-start-column="26" selection-end-line="105" selection-end-column="26" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/theapp/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="11" column="41" lean-forward="false" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -89,7 +87,6 @@
         <option value="$PROJECT_DIR$/web/urls.py" />
         <option value="$PROJECT_DIR$/web/settings.py" />
         <option value="$PROJECT_DIR$/theapp/templates/theapp/login1.html" />
-        <option value="$PROJECT_DIR$/theapp/models.py" />
         <option value="$PROJECT_DIR$/theapp/templates/theapp/signup.html" />
         <option value="$USER_HOME$/Documents/OLD/socialnetwork-v1/mainapp/views.py" />
         <option value="$PROJECT_DIR$/theapp/templates/theapp/logout.html" />
@@ -99,6 +96,7 @@
         <option value="$PROJECT_DIR$/theapp/templates/theapp/login.html" />
         <option value="$PROJECT_DIR$/theapp/templates/theapp/newBase.html" />
         <option value="$PROJECT_DIR$/theapp/static/theapp/ajax.js" />
+        <option value="$PROJECT_DIR$/theapp/models.py" />
         <option value="$PROJECT_DIR$/theapp/views.py" />
         <option value="$PROJECT_DIR$/theapp/templates/theapp/profile.html" />
       </list>
@@ -269,6 +267,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -539,13 +538,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/theapp/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="9" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Documents/webProject/OLD/cw1/myapp/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -599,16 +591,24 @@
     </entry>
     <entry file="file://$USER_HOME$/Documents/webProject/OLD/cw1/myapp/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
+        <state relative-caret-position="423">
           <caret line="41" column="50" lean-forward="false" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theapp/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" column="41" lean-forward="false" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/theapp/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1980">
-          <caret line="138" column="29" lean-forward="false" selection-start-line="138" selection-start-column="29" selection-end-line="138" selection-end-column="29" />
+        <state relative-caret-position="434">
+          <caret line="105" column="26" lean-forward="true" selection-start-line="105" selection-start-column="26" selection-end-line="105" selection-end-column="26" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
@@ -617,8 +617,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/theapp/templates/theapp/profile.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="52" column="18" lean-forward="false" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+        <state relative-caret-position="293">
+          <caret line="47" column="13" lean-forward="true" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
           <folding />
         </state>
       </provider>

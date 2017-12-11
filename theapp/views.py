@@ -95,27 +95,29 @@ def profile(request):
     u = request.session['username']
     member = AppUser.objects.get(pk=u)
     phone=member.phone
-    email_addr=member.email
-    name=member.name
-    if 'username' in request.POST:
+    email=member.email
+    first_name=member.name
+    if 'email' in request.POST:
         # if user posted changes. it doesnt have to be username, but username only will do
-        name = request.POST['username']
+        first_name = request.POST['fname']
         email = request.POST['email']
         phone = request.POST['phone']
         member.email = email
         member.phone=phone
-        member.name=name
+        member.name=first_name
         if 'new_password' in request.POST:
             new_password = hashlib.sha224((request.POST['new_password']).encode('utf-8')).hexdigest()
             member.password = new_password
         member.save()
+        request.session['username']=email
+        u=email
 
     return render(request, 'theapp/profile.html', {
         'appname': appname,
         'username': u,
         'phone' : phone,
-        'email_addr':email_addr,
-        'name':name,
+        'email_addr':email,
+        'first_name':first_name,
         'loggedin': True}
         )
 
