@@ -4,7 +4,7 @@
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="{% static 'theapp/ajax.js' %}"></script>
-        <title>Django Girls blog</title>
+        <title>Newspaper</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -28,6 +28,7 @@
 
     <ul class="nav navbar-nav navbar-right">
         {% if loggedin %}
+        <li><a href="/profile"><span class="glyphicon glyphicon-profile"></span>My profile</a></li>
         <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
         {% else %}
       <li><a href="/signup/"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

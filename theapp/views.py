@@ -106,7 +106,7 @@ def profile(request):
         member.phone=phone
         member.name=name
         if 'new_password' in request.POST:
-            new_password = hashlib.sha224((request.POST['password']).encode('utf-8')).hexdigest()
+            new_password = hashlib.sha224((request.POST['new_password']).encode('utf-8')).hexdigest()
             member.password = new_password
         member.save()
 
@@ -136,15 +136,16 @@ def news(request):
 
 def checkpassword(request):
     username = request.session['username']
-    entered_password=request.GET.get('passw')
+    ip = request.GET['passw']
+    entered_password=hashlib.sha224((request.GET['passw']).encode('utf-8')).hexdigest()
     print(entered_password)
     member = AppUser.objects.get(pk=username)
     actual_pass = member.password
     correctPassword = 'False'
     if actual_pass==entered_password:
         correctPassword ='True'
-    context = {'list': correctPassword}
-    return HttpResponse('test')
+    context = {'list': correctPassword, 'ip' :ip}
+    return HttpResponse(json.dumps(context))
 
 
 

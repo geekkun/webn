@@ -1,10 +1,7 @@
 {% extends "theapp/newBase.html" %}
 {% block content %}
 <div class='main'>
-{% if text %}
 <h3>Your Profile</h3>
-{{ phone }} <br style='clear:left;'><br>
-{% endif %}
 <form method='POST' action='/profile/' enctype='multipart/form-data'>
   	{% csrf_token %}
 	<h3>Enter or edit your details </h3>
@@ -20,6 +17,7 @@
 	<br>
 	<br>
 	<span class='fieldname'>To change your password, enter the following: </span>
+	<br>
 	<span class='fieldname'>Old password</span>
 	        <input type='password' maxlength='50' id='op' name='old_password' autocomplete='off'>
 			<span id='passmessage'></span>
@@ -34,15 +32,6 @@
    <input type='submit' id="submit_but" value='Save Profile' disabled>
 </form>
 	<script>
-
-		function checkPass(){
-		    console.log('MB HERE?')
-		    var data =$.parseJSON(this.success.arguments[0])
-		    console.log(data)
-			$('#passmessage').html('Correct')
-
-
-    }
 
 	$(function(){
 		$('#np, #np_confirm').on('keyup', function () {
@@ -60,21 +49,40 @@
 		    }
 
 		});
-		 $('#old_password').on('keyup',function () {
 
-		    console.log('LOL')
-		    $('#passmessage').html('Here')
+		 $('#op').bind('input propertychange',function () {
             $.ajax({
                 type: 'GET',
                 url: '/checkpassword/',
                 data: {
                     'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val(),
-					'passw': $('#old_password').val()
+					'passw': $('#op').val()
                 },
-                success: checkPass(),
+                success: function() {
+                    var data = $.parseJSON(this.success.arguments[0])
+                    if (data.list == 'True'&&$('#op').val()) {
+                        $('#passmessage').html('Correct').css('color', 'green');
+                    }
+                    if (data.list == 'False'&&$('#op').val()) {
+                        $('#passmessage').html('Wrong').css('color', 'red');
+                    }
+                    if(!$('#op').val()){
+                        $('#passmessage').html('')
+                    }
+
+
+                },
+
+                failure: function () {
+                    $('#passmessage').html('failed ajax')
+
+                 },
                 dataType: 'html'
             });
+
         })
+
+
 
 	});
 
@@ -84,3 +92,9 @@
 </div>
 {% endblock %}
 
+<!--success: function(json){-->
+                    <!--window.alert(json.length)-->
+                    <!--$('#passmessage').html('I am succesfull!!!!')-->
+                    <!--$('#message').html('BLAAAAA')-->
+                    <!--$('#passmessage').html('Here'+json.list[0][0] +'testing')-->
+                <!--},-->
