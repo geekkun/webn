@@ -22,6 +22,7 @@
 	<span class='fieldname'>To change your password, enter the following: </span>
 	<span class='fieldname'>Old password</span>
 	        <input type='password' maxlength='50' id='op' name='old_password' autocomplete='off'>
+			<span id='passmessage'></span>
 	<br>
 	<span class='fieldname'>New password</span>
 	        <input type='password' maxlength='50' id='np' name='new_password'>
@@ -33,6 +34,16 @@
    <input type='submit' id="submit_but" value='Save Profile' disabled>
 </form>
 	<script>
+
+		function checkPass(){
+		    console.log('MB HERE?')
+		    var data =$.parseJSON(this.success.arguments[0])
+		    console.log(data)
+			$('#passmessage').html('Correct')
+
+
+    }
+
 	$(function(){
 		$('#np, #np_confirm').on('keyup', function () {
 		    console.log('Here sooka')
@@ -40,14 +51,35 @@
 		 $('#message').html('Matching').css('color', 'green');
 		 $('#submit_but').removeAttr("disabled");
 		}
-		else{
+		else if  ($('#np').val()=='' && $('#np_confirm').val()=='') {
+                $('#message').html('')
+            }
+        else {
 			$('#message').html('Not Matching').css('color', 'red');
 			$('#submit_but').attr("disabled",'disabled');
 		    }
 
-
 		});
+		 $('#old_password').on('keyup',function () {
+
+		    console.log('LOL')
+		    $('#passmessage').html('Here')
+            $.ajax({
+                type: 'GET',
+                url: '/checkpassword/',
+                data: {
+                    'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val(),
+					'passw': $('#old_password').val()
+                },
+                success: checkPass(),
+                dataType: 'html'
+            });
+        })
+
 	});
+
+
+
 </script>
 </div>
 {% endblock %}

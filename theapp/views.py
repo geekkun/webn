@@ -4,6 +4,7 @@ from django.http import HttpResponse, Http404
 from django.views import generic
 from django.template import loader
 import hashlib
+import json
 
 
 appname = 'Newspaper'
@@ -104,6 +105,9 @@ def profile(request):
         member.email = email
         member.phone=phone
         member.name=name
+        if 'new_password' in request.POST:
+            new_password = hashlib.sha224((request.POST['password']).encode('utf-8')).hexdigest()
+            member.password = new_password
         member.save()
 
     return render(request, 'theapp/profile.html', {
@@ -119,27 +123,64 @@ def profile(request):
 def news(request):
     template = loader.get_template('theapp/news.html')
     articles = Article.objects.all()
+    if 'username' in request.session:
+        loggedin = True
+    else:
+        loggedin = False
     context = {
-        'articles': articles
+        'articles': articles,
+        'loggedin':loggedin
     }
     return HttpResponse(template.render(context,request))
+
+
+def checkpassword(request):
+    username = request.session['username']
+    entered_password=request.GET.get('passw')
+    print(entered_password)
+    member = AppUser.objects.get(pk=username)
+    actual_pass = member.password
+    correctPassword = 'False'
+    if actual_pass==entered_password:
+        correctPassword ='True'
+    context = {'list': correctPassword}
+    return HttpResponse('test')
+
+
+
+
 
 def sport(request):
     template = loader.get_template('theapp/news.html')
     articles = Article.objects.filter(category="SP")
+    if 'username' in request.session:
+        loggedin = True
+    else:
+        loggedin = False
     context = {
-        'articles': articles
+        'articles': articles,
+        'loggedin':loggedin
     }
     return HttpResponse(template.render(context, request))
 
 def business(request):
     template = loader.get_template('theapp/news.html')
     articles = Article.objects.filter(category='BS')
+    if 'username' in request.session:
+        loggedin = True
+    else:
+        loggedin = False
     context = {
-        'articles': articles
+        'articles': articles,
+        'loggedin':loggedin
     }
     return HttpResponse(template.render(context, request))
 
 def article(request, article_id):
     article = get_object_or_404(Article, pk=article_id)
-    return render(request, 'theapp/article.html', {'article': article})
+    if 'username' in request.session:
+        loggedin = True
+    else:
+        loggedin = False
+    return render(request, 'theapp/article.html', {'article': article,
+        'loggedin':loggedin})
