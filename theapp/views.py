@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from theapp.models import AppUser, Comments, Likes, Dislikes, Article
 from django.http import HttpResponse, Http404
+from django.shortcuts import get_object_or_404, render
 from django.views import generic
 from django.template import loader
 import hashlib
