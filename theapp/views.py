@@ -181,9 +181,10 @@ def business(request):
 
 def article(request, article_id):
     article = get_object_or_404(Article, pk=article_id)
+    comm = Comments.objects.filter(article_id=article_id)
     if 'username' in request.session:
         loggedin = True
     else:
         loggedin = False
     return render(request, 'theapp/article.html', {'article': article,
-        'loggedin':loggedin})
+        'loggedin':loggedin, 'comments': comm})
