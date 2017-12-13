@@ -1,37 +1,41 @@
-$(function(){
 
-		 $('#likeDislike').on('click',function () {
-		     window.alert('In LD')
-             window.alert($("input[name=csrfmiddlewaretoken]").val())
+
+$(function(){
+    checkButtons();
+
+		 $('.likeDislike').on('click',function () {
             $.ajax({
                 type: 'POST',
                 url: '/likeDislike/',
                 data: {
                     'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val(),
-					'ld': $('#likeDislike').value(),
-                    'article_id':$('#article_title').val()
+					'ld': this.value,
+                    'article_id':$('#test').text()
                 },
                 success: function() {
-                    window.alert('HERE!!!')
                     var data = $.parseJSON(this.success.arguments[0])
                     if (data.list == 'AddLike') {
-                        $('#allLikes').html($('#allLikes').valueOf()+1)
-                        $('#userLikes').html($('#allLikes').valueOf()+1)
+                        $('#allLikes').html(parseInt($('#allLikes').text())+1)
+                        $('#userLikes').html(parseInt($('#userLikes').text())+1)
 
                     }
-                    if (data.list == 'RemoveLike') {
-                        $('#allLikes').html($('#allLikes').valueOf()-1)
-                        $('#userLikes').html($('#allLikes').valueOf()-1)
+                    else if (data.list == 'RemoveLike') {
+                        $('#allLikes').html(parseInt($('#allLikes').text())-1)
+                        $('#userLikes').html(parseInt($('#userLikes').text())-1)
                     }
-                    if (data.list == 'AddDislike') {
-                        $('#allDislikes').html($('#allLikes').valueOf()+1)
-                        $('#userDislikes').html($('#allLikes').valueOf()+1)
+                    else if (data.list == 'AddDislike') {
+                        $('#allDislikes').html(parseInt($('#allDislikes').text())+1)
+                        $('#userDislikes').html(parseInt($('#userDislikes').text())+1)
                     }
-                    if (data.list == 'RemoveDislike') {
-                        $('#allDislikes').html($('#allLikes').valueOf()-1)
-                        $('#userDislikes').html($('#allLikes').valueOf()-1)
+                    else if (data.list == 'RemoveDislike') {
+                        $('#allDislikes').html(parseInt($('#allDislikes').text())-1)
+                        $('#userDislikes').html(parseInt($('#userDislikes').text())-1)
+                    }
+                    else{
+                        window.alert('HERE blya(!!!')
                     }
 
+                checkButtons()
                 },
 
                 failure: function () {
@@ -46,3 +50,32 @@ $(function(){
 
 
 	});
+
+
+function checkButtons() {
+
+     if(parseInt($('#userLikes').text())==1){
+            //disable dislike button
+
+            $('#dislikeButton').attr("disabled",true);
+
+        }
+        else if(parseInt($('#userDislikes').text())==1) {
+            //disable like button
+            $('#likeButton').attr("disabled", true);
+
+
+        }
+        else if(parseInt($('#userLikes').text())==0)
+
+         {
+             if(parseInt($('#userDislikes').text())==0){
+            //enable like and dislike button
+            $('#likeButton').attr("disabled", false);
+            $('#dislikeButton').attr("disabled", false);
+             }
+
+        }
+
+
+}

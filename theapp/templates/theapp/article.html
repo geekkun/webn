@@ -5,12 +5,12 @@
 <script src="{% static 'theapp/likeDislike.js' %}"></script>
     <h2 id="article_title">{{ article.title }}</h2>
     <a href="/news/{{ object.category }}"><h5>{{ article.get_category_display }}</h5></a>
-    <p>{{ article.body }}</p>
-    <p id="allLikes">Likes: {{ likes }}</p>
-    <p id="allDisikes">Dislikes: {{ dislikes }}</p>
-    <p id="userLikes">UserLikes: {{ userLike }}</p>
-    <p id="userDislikes">UserDislikes: {{ userDislike }}</p>
-    <span id="test"></span>
+    <span></span><p>{{ article.body }}</p>
+    <span>Likes:</span><p id="allLikes"> {{ likes }}</p>
+    <span>Dislikes:</span> <p id="allDislikes"> {{ dislikes }}</p>
+    <span>UserLikes:</span><p id="userLikes"> {{ userLike }}</p>
+    <span>UserDislikes</span><p id="userDislikes"> {{ userDislike }}</p>
+    <span id="test">{{ article.id }}</span>
     </br>
     <h4>Comments</h4>
     <div class="row">
@@ -40,7 +40,7 @@
             </form>
         </div>
         <div class="form-group" style="width: 30%">
-              <button type="submit" value="like" id="likeDislike" class="btn btn-primary" style="margin-top: 1em">like</button> &nbsp <button type="submit" id="likeDislike2" value="dislike" class="btn btn-primary" style="margin-top: 1em">dislike</button>
+              <button type="submit" value="like" id="likeButton" class="btn btn-primary likeDislike" style="margin-top: 1em">like</button> &nbsp <button type="submit" id="dislikeButton" value="dislike" class="btn btn-primary likeDislike" style="margin-top: 1em">dislike</button>
         </div>
     {% else %}
         <span>Login to post comments or like articles.</span>

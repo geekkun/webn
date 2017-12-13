@@ -260,6 +260,9 @@ def likeDislike(request):
      likeOrDislike = request.POST['ld']
      username = request.session['username']
      art_id= request.POST['article_id']
+     thearticle = Article.objects.get(pk = art_id)
+     user = AppUser.objects.get(pk=username)
+     print(art_id)
      deleted=False
      if likeOrDislike=='like':
          try:
@@ -270,7 +273,8 @@ def likeDislike(request):
           return HttpResponse(json.dumps(context))
          except:Likes.DoesNotExist
          if not deleted:
-          like = Likes(user_id=username, article_id=art_id)
+          print('here')
+          like = Likes(user_id=user, article_id=thearticle)
           like.save()
           context = {'list': 'AddLike'}
           return HttpResponse(json.dumps(context))
@@ -283,7 +287,7 @@ def likeDislike(request):
              return HttpResponse(json.dumps(context))
          except:Dislikes.DoesNotExist
          if not deleted:
-          dislike = Dislikes(user_id=username, article_id=art_id)
+          dislike = Dislikes(user_id=user, article_id=thearticle)
           dislike.save()
           context =  {'list':'AddDislike'}
           return HttpResponse(json.dumps(context))
