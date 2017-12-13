@@ -1,0 +1,32 @@
+{% extends "theapp/newBase.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<script src="{% static 'theapp/ajax.js' %}"></script>
+
+<br>
+<br>
+<div class='main'>
+    {% if loggedin %}
+    You are now logged in.
+    Please <a href='/news/'>click here</a> to go to the news or <a href='/profile/'>click here</a> to check your profile.
+        <br><br>
+    {% else %}
+    {{context}}
+        <h3>Please enter your details to login</h3>
+        <form method='POST' action='/login/'>
+        	{% csrf_token %}
+            <span class='fieldname'>Email address</span>
+            <input type='text' maxlength='50' id='logusername' name='username'>
+            <span id='info'></span>
+            <br>
+            <span class='fieldname'>Password</span>
+            <input type='password' maxlength='25' name='password'><br>
+            <span class='fieldname'>&nbsp;</span>
+            <input type='submit' value='Login'>
+
+        </form>
+    {% endif %}
+</div>
+
+{% endblock content %}
