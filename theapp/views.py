@@ -266,20 +266,20 @@ def likeDislike(request):
           userLike = Likes.objects.get(article_id=art_id, user_id=username)
           userLike.delete()
           deleted=True
-          context = {'message': 'RemoveLike'}
+          context = {'list': 'RemoveLike'}
           return HttpResponse(json.dumps(context))
          except:Likes.DoesNotExist
          if not deleted:
           like = Likes(user_id=username, article_id=art_id)
           like.save()
-          context = {'message': 'AddLike'}
+          context = {'list': 'AddLike'}
           return HttpResponse(json.dumps(context))
      else:
          try:
              userDislike = Dislikes.objects.get(article_id=art_id, user_id=username)
              userDislike.delete()
              deleted = True
-             context = {'message': 'RemoveDislike'}
+             context = {'list': 'RemoveDislike'}
              return HttpResponse(json.dumps(context))
          except:Dislikes.DoesNotExist
          if not deleted:
