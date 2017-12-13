@@ -2,10 +2,68 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0940f7de-ce87-48f1-a10d-7402d4d857c4" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/db.sqlite3" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/static/fonts/glyphicons-halflings-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/static/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/static/fonts/glyphicons-halflings-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/static/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/static/theapp/fonts/glyphicons-halflings-regular.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/static/theapp/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/static/theapp/fonts/glyphicons-halflings-regular.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/static/theapp/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/conf/reload.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/manage.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/openshift/scripts/run-in-container.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/openshift/templates/django-postgresql-persistent.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/openshift/templates/django-postgresql.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/openshift/templates/django.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/project/database.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/project/settings.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/project/urls.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/requirements.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/setup.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/static/css/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/static/css/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/static/fonts/glyphicons-halflings-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/static/js/ajax.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/static/js/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/admin.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/apps.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/database.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/migrations/0001_initial.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/migrations/0002_article_category.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/migrations/0003_auto_20171129_1050.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/migrations/0004_auto_20171129_1107.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/migrations/0005_auto_20171129_1114.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/models.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/resources.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/static/theapp/css/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/static/theapp/css/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/static/theapp/fonts/glyphicons-halflings-regular.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/static/theapp/js/ajax.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/static/theapp/js/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/templates/theapp/article.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/templates/theapp/login.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/templates/theapp/logout.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/templates/theapp/newBase.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/templates/theapp/news.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/templates/theapp/not-logged-in.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/templates/theapp/profile.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/templates/theapp/signup.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/tests.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/urls.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/theapp/views.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/django/wsgi.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/theapp/migrations/__init__.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/theapp/static/theapp/profile.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/theapp/templates/theapp/changePassword.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/webProjectGroup.iml" afterPath="$PROJECT_DIR$/.idea/webProjectGroup.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theapp/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/theapp/migrations/0001_initial.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theapp/models.py" afterPath="$PROJECT_DIR$/theapp/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theapp/templates/theapp/newBase.html" afterPath="$PROJECT_DIR$/theapp/templates/theapp/newBase.html" />
@@ -25,18 +83,18 @@
       <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/theapp/templates/theapp/profile.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
+            <state relative-caret-position="396">
               <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="changePassword.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/theapp/templates/theapp/changePassword.html">
+      <file leaf-file-name="article.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/theapp/templates/theapp/article.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -45,48 +103,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/theapp/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
+            <state relative-caret-position="162">
               <caret line="11" column="42" lean-forward="false" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/theapp/migrations/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="0005_auto_20171129_1114.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/theapp/migrations/0005_auto_20171129_1114.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="0004_auto_20171129_1107.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/theapp/migrations/0004_auto_20171129_1107.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="0001_initial.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/theapp/migrations/0001_initial.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -95,18 +113,18 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/theapp/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="30" column="50" lean-forward="false" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
+            <state relative-caret-position="492">
+              <caret line="34" column="58" lean-forward="false" selection-start-line="34" selection-start-column="58" selection-end-line="34" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/theapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="592">
-              <caret line="141" column="50" lean-forward="false" selection-start-line="141" selection-start-column="50" selection-end-line="141" selection-end-column="50" />
+            <state relative-caret-position="2378">
+              <caret line="141" column="25" lean-forward="true" selection-start-line="141" selection-start-column="25" selection-end-line="141" selection-end-column="25" />
               <folding>
                 <element signature="e#0#64#0" expanded="true" />
               </folding>
@@ -117,8 +135,8 @@
       <file leaf-file-name="profile.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/theapp/static/theapp/profile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="51" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+            <state relative-caret-position="432">
+              <caret line="24" column="37" lean-forward="true" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -154,7 +172,7 @@
         <option value="$PROJECT_DIR$/web/settings.py" />
         <option value="$PROJECT_DIR$/theapp/templates/theapp/login1.html" />
         <option value="$PROJECT_DIR$/theapp/templates/theapp/signup.html" />
-        <option value="$PROJECT_DIR$/../OLD/socialnetwork-v1/mainapp/views.py" />
+        <option value="$USER_HOME$/OLD/socialnetwork-v1/mainapp/views.py" />
         <option value="$PROJECT_DIR$/theapp/templates/theapp/logout.html" />
         <option value="$PROJECT_DIR$/theapp/templates/theapp/not-logged-in.html" />
         <option value="$PROJECT_DIR$/theapp/templates/theapp/news.html" />
@@ -177,10 +195,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="823" />
+    <option name="height" value="745" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -198,30 +216,42 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="webn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webn" type="462c0819:PsiDirectoryNode" />
+              <item name="webProjectGroup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webProjectGroup" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="webn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webn" type="462c0819:PsiDirectoryNode" />
+              <item name="webProjectGroup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webProjectGroup" type="462c0819:PsiDirectoryNode" />
               <item name="theapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="webn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webn" type="462c0819:PsiDirectoryNode" />
+              <item name="webProjectGroup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webProjectGroup" type="462c0819:PsiDirectoryNode" />
               <item name="theapp" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webProjectGroup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webProjectGroup" type="462c0819:PsiDirectoryNode" />
+              <item name="theapp" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="theapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webProjectGroup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webProjectGroup" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -268,7 +298,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="823" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="745" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -303,13 +333,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../OLD/socialnetwork-v1/mainapp/templates/mainapp/not-logged-in.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/theapp/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="900">
@@ -317,27 +340,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../OLD/socialnetwork-v1/mainapp/templates/mainapp/not-logged-in.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../OLD/socialnetwork-v1/mainapp/static/mainapp/jquery-1.11.2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="331" column="18" lean-forward="false" selection-start-line="331" selection-start-column="17" selection-end-line="331" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../OLD/socialnetwork-v1/mainapp/static/mainapp/scripts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/OLD/socialnetwork-v1/mainapp/templates/mainapp/not-logged-in.html" />
+    <entry file="file://$USER_HOME$/OLD/socialnetwork-v1/mainapp/static/mainapp/jquery-1.11.2.js" />
+    <entry file="file://$USER_HOME$/OLD/socialnetwork-v1/mainapp/static/mainapp/scripts.js" />
     <entry file="file://$PROJECT_DIR$/theapp/apps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -345,20 +350,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../OLD/socialnetwork-v1/socialnetwork/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../OLD/socialnetwork-v1/socialnetwork/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/OLD/socialnetwork-v1/socialnetwork/urls.py" />
+    <entry file="file://$USER_HOME$/OLD/socialnetwork-v1/socialnetwork/settings.py" />
     <entry file="file://$PROJECT_DIR$/web/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
@@ -374,20 +367,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/theapp/templates/theapp/login1.html" />
-    <entry file="file://$USER_HOME$/miniconda3/envs/web/lib/python3.5/site-packages/django/contrib/auth/base_user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="72" column="8" lean-forward="false" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../OLD/socialnetwork-v1/mainapp/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/miniconda3/envs/web/lib/python3.5/site-packages/django/contrib/auth/base_user.py" />
+    <entry file="file://$USER_HOME$/OLD/socialnetwork-v1/mainapp/models.py" />
     <entry file="file://$PROJECT_DIR$/web/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -395,83 +376,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../OLD/socialnetwork-v1/mainapp/templates/mainapp/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="15" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../OLD/socialnetwork-v1/mainapp/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../OLD/socialnetwork-v1/mainapp/templates/mainapp/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../OLD/socialnetwork-v1/mainapp/templates/mainapp/members.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../OLD/socialnetwork-v1/mainapp/templates/mainapp/member.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../OLD/socialnetwork-v1/mainapp/templates/mainapp/user-registered.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../OLD/socialnetwork-v1/mainapp/templates/mainapp/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="23" lean-forward="false" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../OLD/socialnetwork-v1/mainapp/templates/mainapp/checkuser.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../OLD/socialnetwork-v1/mainapp/templates/mainapp/friends.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../OLD/socialnetwork-v1/mainapp/templates/mainapp/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../OLD/socialnetwork-v1/mainapp/templates/mainapp/logout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/OLD/socialnetwork-v1/mainapp/templates/mainapp/login.html" />
+    <entry file="file://$USER_HOME$/OLD/socialnetwork-v1/mainapp/urls.py" />
+    <entry file="file://$USER_HOME$/OLD/socialnetwork-v1/mainapp/templates/mainapp/profile.html" />
+    <entry file="file://$USER_HOME$/OLD/socialnetwork-v1/mainapp/templates/mainapp/members.html" />
+    <entry file="file://$USER_HOME$/OLD/socialnetwork-v1/mainapp/templates/mainapp/member.html" />
+    <entry file="file://$USER_HOME$/OLD/socialnetwork-v1/mainapp/templates/mainapp/user-registered.html" />
+    <entry file="file://$USER_HOME$/OLD/socialnetwork-v1/mainapp/templates/mainapp/base.html" />
+    <entry file="file://$USER_HOME$/OLD/socialnetwork-v1/mainapp/templates/mainapp/checkuser.html" />
+    <entry file="file://$USER_HOME$/OLD/socialnetwork-v1/mainapp/templates/mainapp/friends.html" />
+    <entry file="file://$USER_HOME$/OLD/socialnetwork-v1/mainapp/templates/mainapp/index.html" />
+    <entry file="file://$USER_HOME$/OLD/socialnetwork-v1/mainapp/templates/mainapp/logout.html" />
     <entry file="file://$PROJECT_DIR$/theapp/templates/theapp/logout.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -493,21 +408,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../OLD/socialnetwork-v1/mainapp/static/mainapp/ajax.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="12" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/OLD/socialnetwork-v1/mainapp/static/mainapp/ajax.js" />
     <entry file="file://$PROJECT_DIR$/theapp/templates/theapp/base.html" />
-    <entry file="file://$PROJECT_DIR$/../OLD/socialnetwork-v1/mainapp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-777">
-          <caret line="2" column="45" lean-forward="false" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/OLD/socialnetwork-v1/mainapp/views.py" />
     <entry file="file://$PROJECT_DIR$/theapp/templates/theapp/news.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -515,20 +418,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../webProject/OLD/cw1/myapp/templates/myapp/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../webProject/OLD/cw1/myapp/templates/myapp/detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/webProject/OLD/cw1/myapp/templates/myapp/index.html" />
+    <entry file="file://$USER_HOME$/webProject/OLD/cw1/myapp/templates/myapp/detail.html" />
     <entry file="file://$PROJECT_DIR$/theapp/static/theapp/ajax.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -543,30 +434,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../webProject/OLD/cw1/myapp/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../webProject/OLD/cw1/myapp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="44" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../webProject/OLD/cw1/myapp/static/myapp/jquery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
-          <caret line="83" column="15" lean-forward="false" selection-start-line="83" selection-start-column="15" selection-end-line="83" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/webProject/OLD/cw1/myapp/urls.py" />
+    <entry file="file://$USER_HOME$/webProject/OLD/cw1/myapp/views.py" />
+    <entry file="file://$USER_HOME$/webProject/OLD/cw1/myapp/static/myapp/jquery.js" />
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -583,51 +453,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/theapp/static/theapp/profile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="51" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theapp/templates/theapp/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theapp/templates/theapp/changePassword.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theapp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="141" column="50" lean-forward="false" selection-start-line="141" selection-start-column="50" selection-end-line="141" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#64#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theapp/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="30" column="50" lean-forward="false" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/theapp/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
+        <state relative-caret-position="162">
           <caret line="11" column="42" lean-forward="false" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
           <folding />
         </state>
@@ -662,6 +490,56 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theapp/static/theapp/profile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="37" lean-forward="true" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theapp/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="34" column="58" lean-forward="false" selection-start-line="34" selection-start-column="58" selection-end-line="34" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theapp/templates/theapp/changePassword.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theapp/templates/theapp/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theapp/templates/theapp/article.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theapp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2378">
+          <caret line="141" column="25" lean-forward="true" selection-start-line="141" selection-start-column="25" selection-end-line="141" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
