@@ -36,7 +36,7 @@ class Likes(models.Model):
     def __str__(self):
         return str(self.article_id)+' '+str(self.user_id)
     class Meta:
-     unique_together = (('article_id', 'user_id'),)
+        unique_together = (('article_id', 'user_id'),)
     article_id = models.ForeignKey(Article)
     user_id = models.ForeignKey(AppUser, on_delete=models.CASCADE)
 

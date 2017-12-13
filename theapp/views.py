@@ -94,7 +94,7 @@ def login(request):
             )
         else:
             print (p)
-            return HttpResponse("Wrong password test")
+            return HttpResponse("Wrong password")
 
 @loggedin
 def logout(request):
@@ -239,18 +239,53 @@ def article(request, article_id):
     userLike = None
     userDislike = None
     try:
-        likes = Likes.objects.get(pk=article_id)
-        dislikes = Dislikes.objects.get(pk=article_id)
+     likes = Likes.objects.filter(article_id=article_id).count()
+     dislikes = Dislikes.objects.filter(article_id=article_id).count()
     except:Likes.DoesNotExist, Dislikes.DoesNotExist
     if 'username' in request.session:
         loggedin = True
         user = AppUser.objects.get(pk=request.session['username'])
         if likes != None or dislikes != None:
          try:
-          userDislike = Dislikes.objects.get(article_id=article_id, user_id=user.id)
-          userLike= Likes.objects.get(article_id=article_id, user_id=user.id)
-         except: Dislikes.objects.get(article_id=article_id, user_id=user.id).DoesNotExist, Likes.objects.get(article_id=article_id, user_id=user.id).DoesNotExist
+          userDislike = Dislikes.objects.filter(article_id=article_id, user_id=user.email).count()
+          userLike= Likes.objects.filter(article_id=article_id, user_id=user.email).count()
+         except: Dislikes.DoesNotExist, Likes.DoesNotExist
     else:
         loggedin = False
     return render(request, 'theapp/article.html', {'article': article,
         'loggedin':loggedin, 'comments': comm, 'user':user, 'likes': likes, 'dislikes':dislikes, 'userLike':userLike, 'userDislike':userDislike})
+
+@loggedin
+def likeDislike(request):
+     likeOrDislike = request.POST['ld']
+     username = request.session['username']
+     art_id= request.POST['article_id']
+     deleted=False
+     if likeOrDislike=='like':
+         try:
+          userLike = Likes.objects.get(article_id=art_id, user_id=username)
+          userLike.delete()
+          deleted=True
+          context = {'message': 'RemoveLike'}
+          return HttpResponse(json.dumps(context))
+         except:Likes.DoesNotExist
+         if not deleted:
+          like = Likes(user_id=username, article_id=art_id)
+          like.save()
+          context = {'message': 'AddLike'}
+          return HttpResponse(json.dumps(context))
+     else:
+         try:
+             userDislike = Dislikes.objects.get(article_id=art_id, user_id=username)
+             userDislike.delete()
+             deleted = True
+             context = {'message': 'RemoveDislike'}
+             return HttpResponse(json.dumps(context))
+         except:Dislikes.DoesNotExist
+         if not deleted:
+          dislike = Dislikes(user_id=username, article_id=art_id)
+          dislike.save()
+          context =  {'list':'AddDislike'}
+          return HttpResponse(json.dumps(context))
+     context = {'list': 'ERROR'}
+     return HttpResponse(json.dumps(context))

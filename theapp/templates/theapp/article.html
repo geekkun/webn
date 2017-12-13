@@ -1,11 +1,16 @@
 {% extends "theapp/newbase.html" %}
 
 {% block content %}
-    <h2>{{ article.title }}</h2>
+{% load staticfiles %}
+<script src="{% static 'theapp/likeDislike.js' %}"></script>
+    <h2 id="article_title">{{ article.title }}</h2>
     <a href="/news/{{ object.category }}"><h5>{{ article.get_category_display }}</h5></a>
     <p>{{ article.body }}</p>
-    <p>{{ likes }}</p>
-    <p>{{ dislikes }}</p>
+    <p id="allLikes">Likes: {{ likes }}</p>
+    <p id="allDisikes">Dislikes: {{ dislikes }}</p>
+    <p id="userLikes">UserLikes: {{ userLike }}</p>
+    <p id="userDislikes">UserDislikes: {{ userDislike }}</p>
+    <span id="test"></span>
     </br>
     <h4>Comments</h4>
     <div class="row">
@@ -34,13 +39,12 @@
               <button type="submit" id="submitComment" class="btn btn-primary" style="margin-top: 1em">Post Comment</button>
             </form>
         </div>
-        <div class="form-group" style="width: 30%">
-            <form method="post" action="/likeDislike/{{ article.id }}/">
+    <form method="post" action="/likeDislike/">
                 {% csrf_token %}
-              <button type="submit" id="likeArticle" class="btn btn-primary" style="margin-top: 1em">Like</button>
-                <button type="submit" id="dislikeArticle" class="btn btn-primary" style="margin-top: 1em">Like</button>
-            </form>
+        <div class="form-group" style="width: 30%">
+              <button type="submit" value="like" id="likeDislike" class="btn btn-primary" style="margin-top: 1em">Like</button> &nbsp <button type="submit" id="likeDislike2" value="dislike" class="btn btn-primary" style="margin-top: 1em">Dislike</button>
         </div>
+    </form>>
     {% else %}
         <span>Login to post comments or like articles.</span>
     {% endif %}
