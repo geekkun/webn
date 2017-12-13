@@ -9,7 +9,7 @@ class AppUser(models.Model):
         return self.email
     email= models.CharField(max_length=30,primary_key=True)
     password = models.CharField(max_length=256)
-    name = models.CharField(max_length=15)
+    name = models.CharField(max_length=30)
     phone = models.CharField(max_length=15)
 
 

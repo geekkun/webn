@@ -1,9 +1,11 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from theapp.models import AppUser, Comments, Likes, Dislikes, Article
 from django.http import HttpResponse, Http404
+from django.shortcuts import get_object_or_404, render
 from django.views import generic
 from django.template import loader
 import hashlib
+import json
 
 
 appname = 'Newspaper'
@@ -94,60 +96,96 @@ def profile(request):
     u = request.session['username']
     member = AppUser.objects.get(pk=u)
     phone=member.phone
-    email_addr=member.email
-    name=member.name
-    # if 'text' in request.POST:
-    #     text = request.POST['text']
-    #     if member.profile:
-    #         member.profile.text = text
-    #         member.profile.save()
-    #     else:
-    #         profile = Profile(text=text)
-    #         profile.save()
-    #         member.profile = profile
-    #     member.save()
-    # else:
-    #     if member.profile:
-    #         text = member.profile.text
-    #     else:
-    #         text = ""
-    print(email_addr)
+    email=member.email
+    first_name=member.name
+    if 'email' in request.POST:
+        # if user posted changes. it doesnt have to be username, but username only will do
+        first_name = request.POST['fname']
+        email = request.POST['email']
+        phone = request.POST['phone']
+        member.email = email
+        member.phone=phone
+        member.name=first_name
+        if 'new_password' in request.POST:
+            new_password = hashlib.sha224((request.POST['new_password']).encode('utf-8')).hexdigest()
+            member.password = new_password
+        member.save()
+        request.session['username']=email
+        u=email
+
     return render(request, 'theapp/profile.html', {
         'appname': appname,
         'username': u,
         'phone' : phone,
-        'email_addr':email_addr,
-        'name':name,
+        'email_addr':email,
+        'first_name':first_name,
         'loggedin': True}
         )
 
     
-class NewsListView(generic.ListView):
-    model = Article
-    context_object_name = "articles"
-    queryset = Article.objects.all()
-    template_name = "theapp/news.html"
+def news(request):
+    template = loader.get_template('theapp/news.html')
+    articles = Article.objects.all()
+    if 'username' in request.session:
+        loggedin = True
+    else:
+        loggedin = False
+    context = {
+        'articles': articles,
+        'loggedin':loggedin
+    }
+    return HttpResponse(template.render(context,request))
 
-    def news(request):
-        template = loader.get_template('theapp/news.html')
-        articles = Article.objects.all()
-        context = {
-            'articles': articles
-        }
-        return HttpResponse(template.render(context,request))
 
-    def sport(request):
-        template = loader.get_template('theapp/news.html')
-        articles = Article.objects.filter(category="Sport")
-        context = {
-            'articles': articles
-        }
-        return HttpResponse(template.render(context, request))
+def checkpassword(request):
+    username = request.session['username']
+    ip = request.GET['passw']
+    entered_password=hashlib.sha224((request.GET['passw']).encode('utf-8')).hexdigest()
+    print(entered_password)
+    member = AppUser.objects.get(pk=username)
+    actual_pass = member.password
+    correctPassword = 'False'
+    if actual_pass==entered_password:
+        correctPassword ='True'
+    context = {'list': correctPassword, 'ip' :ip}
+    return HttpResponse(json.dumps(context))
 
-    def business(request):
-        template = loader.get_template('theapp/news.html')
-        articles = Article.objects.filter(category='SP')
-        context = {
-            'articles': articles
-        }
-        return HttpResponse(template.render(context, request))
+
+
+
+
+def sport(request):
+    template = loader.get_template('theapp/news.html')
+    articles = Article.objects.filter(category="SP")
+    if 'username' in request.session:
+        loggedin = True
+    else:
+        loggedin = False
+    context = {
+        'articles': articles,
+        'loggedin':loggedin
+    }
+    return HttpResponse(template.render(context, request))
+
+def business(request):
+    template = loader.get_template('theapp/news.html')
+    articles = Article.objects.filter(category='BS')
+    if 'username' in request.session:
+        loggedin = True
+    else:
+        loggedin = False
+    context = {
+        'articles': articles,
+        'loggedin':loggedin
+    }
+    return HttpResponse(template.render(context, request))
+
+def article(request, article_id):
+    article = get_object_or_404(Article, pk=article_id)
+    comm = Comments.objects.filter(article_id=article_id)
+    if 'username' in request.session:
+        loggedin = True
+    else:
+        loggedin = False
+    return render(request, 'theapp/article.html', {'article': article,
+        'loggedin':loggedin, 'comments': comm})

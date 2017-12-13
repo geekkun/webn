@@ -27,10 +27,14 @@ urlpatterns = [
     url(r'^logout/$', views.logout, name='logout'),
     # Ajax: check if user exists on login page
     url(r'^logcheckuser/$', views.logCheckUser, name='logCheckUser'),
+url(r'^checkpassword/$', views.checkpassword, name='logout'),
     
-    url(r'^news/', views.NewsListView.news),
-    url(r'^news/sp', views.NewsListView.sport),
-    url(r'^news/bs', views.NewsListView.business),
+    url(r'^news/$', views.news),
+    url(r'^(?i)news/sp', views.sport),
+    url(r'^(?i)news/bs', views.business),
+    url(r'^news/(?P<article_id>[0-9]+)/$', views.article),
+
     url(r'^profile/$', views.profile, name='profile'),
+    
 
 ]
