@@ -12,9 +12,11 @@
         </br>
         <b>{{ object.user_id }}</b> wrote
         {% if loggedin %}
-            {% if {{object.user_id == user.email}} %}
-                <h2>logged in</h2>
-            {% endif %}
+            {% ifequal object.user_id.email user.email %}
+                <a href="/deletecomment/{{object.id}}">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </a>
+            {% endifequal %}
         {% endif %}
             </br>
         <p>{{ object.content }}</p>
