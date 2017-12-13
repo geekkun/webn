@@ -1,12 +1,18 @@
 $(function(){
-		$('#np, #np_confirm').on('keyup', function () {
+		$('#np, #np_confirm, #op').on('keyup', function () {
+		if($('#passmessage').html()!='Correct'){
+		    $('#submit_but').attr("disabled",'disabled');
+		}
 		if ($('#np').val() == $('#np_confirm').val()&&$('#np').val()!='') {
 		 $('#message').html('Matching').css('color', 'green');
-		 $('#submit_but').removeAttr("disabled");
+		 if($('#passmessage').html()=='Correct'){
+		    $('#submit_but').removeAttr("disabled");
+		 }
 		}
-		else if  ($('#np').val()=='' && $('#np_confirm').val()=='') {
+		else if ($('#np').val()=='' && $('#np_confirm').val()=='') {
                 $('#message').html('')
             }
+
         else {
 			$('#message').html('Not Matching').css('color', 'red');
 			$('#submit_but').attr("disabled",'disabled');
