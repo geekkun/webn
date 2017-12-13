@@ -1,0 +1,99 @@
+{% extends "theapp/newBase.html" %}
+{% block content %}
+<div class='main'>
+<h3>Your Profile</h3>
+<form method='POST' action='/profile/' enctype='multipart/form-data'>
+  	{% csrf_token %}
+	<h3>Enter or edit your details </h3>
+	<span class='fieldname'>Email address</span>
+            <input type='email' maxlength='50' id='logusername' name='email' value={{email_addr}}>
+	<br>
+	<span class='fieldname'>Phone number</span>
+	        <input type='text' maxlength='50' id='loguserphone' name='phone' value={{phone}}>
+	<br>
+	<span class='fieldname'>Name</span>
+	        <input type='text area' maxlength='50' id='name' name='fname' value={{first_name}}>
+	<br>
+	<br>
+	<br>
+	<span class='fieldname'>To change your password, enter the following: </span>
+	<br>
+	<span class='fieldname'>Old password</span>
+	        <input type='password' maxlength='50' id='op' name='old_password' autocomplete='off'>
+			<span id='passmessage'></span>
+	<br>
+	<span class='fieldname'>New password</span>
+	        <input type='password' maxlength='50' id='np' name='new_password'>
+		<br>
+	<span class='fieldname'>Confirm new password</span>
+	        <input type='password' maxlength='50' id='np_confirm' name='new_password_confirm'>
+	  <span id='message'></span>
+
+   <input type='submit' id="submit_but" value='Save Profile'>
+</form>
+	<script>
+
+	$(function(){
+		$('#np, #np_confirm').on('keyup', function () {
+		if ($('#np').val() == $('#np_confirm').val()&&$('#np').val()!='') {
+		 $('#message').html('Matching').css('color', 'green');
+		 $('#submit_but').removeAttr("disabled");
+		}
+		else if  ($('#np').val()=='' && $('#np_confirm').val()=='') {
+                $('#message').html('')
+            }
+        else {
+			$('#message').html('Not Matching').css('color', 'red');
+			$('#submit_but').attr("disabled",'disabled');
+		    }
+
+		});
+
+		 $('#op').bind('input propertychange',function () {
+            $.ajax({
+                type: 'GET',
+                url: '/checkpassword/',
+                data: {
+                    'csrfmiddlewaretoken': $("input[name=csrfmiddlewaretoken]").val(),
+					'passw': $('#op').val()
+                },
+                success: function() {
+                    var data = $.parseJSON(this.success.arguments[0])
+                    if (data.list == 'True'&&$('#op').val()) {
+                        $('#passmessage').html('Correct').css('color', 'green');
+                    }
+                    if (data.list == 'False'&&$('#op').val()) {
+                        $('#passmessage').html('Wrong').css('color', 'red');
+                    }
+                    if(!$('#op').val()){
+                        $('#passmessage').html('')
+                    }
+
+
+                },
+
+                failure: function () {
+                    $('#passmessage').html('failed ajax')
+
+                 },
+                dataType: 'html'
+            });
+
+        })
+
+
+
+	});
+
+
+
+</script>
+</div>
+{% endblock %}
+
+<!--success: function(json){-->
+                    <!--window.alert(json.length)-->
+                    <!--$('#passmessage').html('I am succesfull!!!!')-->
+                    <!--$('#message').html('BLAAAAA')-->
+                    <!--$('#passmessage').html('Here'+json.list[0][0] +'testing')-->
+                <!--},-->

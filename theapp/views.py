@@ -141,6 +141,27 @@ def profile(request):
         'first_name':first_name,
         'loggedin': True}
         )
+def changePassword(request):
+    u = request.session['username']
+    member = AppUser.objects.get(pk=u)
+    phone=member.phone
+    email=member.email
+    first_name=member.name
+    if 'new_password' in request.POST:
+     new_password = hashlib.sha224((request.POST['new_password']).encode('utf-8')).hexdigest()
+     member.password = new_password
+     member.save()
+
+    return render(request, 'theapp/changePassword.html', {
+        'appname': appname,
+        'username': u,
+        'phone' : phone,
+        'email_addr':email,
+        'first_name':first_name,
+        'loggedin': True,
+        'message': 'Your password has been changed'}
+        )
+
 
     
 def news(request):

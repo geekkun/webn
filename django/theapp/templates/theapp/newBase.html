@@ -1,0 +1,51 @@
+{% load staticfiles %}
+
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{% static 'theapp/js/ajax.js' %}"></script>
+    <title>Newspaper</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">-->
+
+{#    <link rel="stylesheet" href="{% static 'theapp/style.css' %}">#}
+</head>
+<body>
+{% block menu %}
+<header>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/news/">News Website</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active">
+                <li><a href="/news/">Home</a></li>
+                <li><a href="/news/bs/">Business</a></li>
+                <li><a href="/news/sp/">Sport</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                {% if loggedin %}
+                <li><a href="/profile"><span class="glyphicon glyphicon-profile"></span>My profile</a></li>
+                <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+                {% else %}
+                <li><a href="/"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="/login/"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+</header>
+{% endblock menu %}
+ <div class="container-fluid">
+    {% block content %}{% endblock content %}
+ </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>

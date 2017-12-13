@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$USER_HOME$/Documents/webProject/OLD/cw1/.idea/cw1.iml" filepath="$USER_HOME$/Documents/webProject/OLD/cw1/.idea/cw1.iml" />
-      <module fileurl="file://$USER_HOME$/Documents/OLD/socialnetwork-v1/.idea/socialnetwork-v1.iml" filepath="$USER_HOME$/Documents/OLD/socialnetwork-v1/.idea/socialnetwork-v1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../webProject/OLD/cw1/.idea/cw1.iml" filepath="$PROJECT_DIR$/../webProject/OLD/cw1/.idea/cw1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../OLD/socialnetwork-v1/.idea/socialnetwork-v1.iml" filepath="$PROJECT_DIR$/../OLD/socialnetwork-v1/.idea/socialnetwork-v1.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/webProjectGroup.iml" filepath="$PROJECT_DIR$/.idea/webProjectGroup.iml" />
+      <module fileurl="file://$USER_HOME$/webn/.idea/webn.iml" filepath="$USER_HOME$/webn/.idea/webn.iml" />
     </modules>
   </component>
 </project>

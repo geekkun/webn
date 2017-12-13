@@ -13,6 +13,7 @@ class AppUser(models.Model):
     phone = models.CharField(max_length=15)
 
 
+
 class Article(models.Model):
     def __str__(self):
         return self.title
