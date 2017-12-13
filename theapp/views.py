@@ -234,10 +234,23 @@ def article(request, article_id):
     article = get_object_or_404(Article, pk=article_id)
     comm = Comments.objects.filter(article_id=article_id)
     user = None
+    likes = None
+    dislikes = None
+    userLike = None
+    userDislike = None
+    try:
+        likes = Likes.objects.get(pk=article_id)
+        dislikes = Dislikes.objects.get(pk=article_id)
+    except:Likes.DoesNotExist, Dislikes.DoesNotExist
     if 'username' in request.session:
         loggedin = True
         user = AppUser.objects.get(pk=request.session['username'])
+        if likes != None or dislikes != None:
+         try:
+          userDislike = Dislikes.objects.get(article_id=article_id, user_id=user.id)
+          userLike= Likes.objects.get(article_id=article_id, user_id=user.id)
+         except: Dislikes.objects.get(article_id=article_id, user_id=user.id).DoesNotExist, Likes.objects.get(article_id=article_id, user_id=user.id).DoesNotExist
     else:
         loggedin = False
     return render(request, 'theapp/article.html', {'article': article,
-        'loggedin':loggedin, 'comments': comm, 'user':user})
+        'loggedin':loggedin, 'comments': comm, 'user':user, 'likes': likes, 'dislikes':dislikes, 'userLike':userLike, 'userDislike':userDislike})
