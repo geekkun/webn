@@ -15,10 +15,11 @@ appname = 'Newspaper'
 def index(request):
     return render(request, 'theapp/signup.html')
 
-def deleteComment(request, comment_id):
+def deleteComment(request, comment_id, article_id):
     if 'username' in request.session:
         loggedin = True
-        print(request.method)
+        Comments.objects.filter(id=comment_id).delete()
+        return redirect("/news/" + article_id)
     else:
         loggedin = False
         return HttpResponse("Login to delete comment")
