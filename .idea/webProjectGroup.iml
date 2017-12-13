@@ -6,6 +6,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="socialnetwork-v1" />
     <orderEntry type="module" module-name="cw1" />
+    <orderEntry type="module" module-name="webn" />
+    <orderEntry type="module" module-name="webn" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_FOLDERS">
