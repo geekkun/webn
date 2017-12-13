@@ -15,6 +15,26 @@ appname = 'Newspaper'
 def index(request):
     return render(request, 'theapp/signup.html')
 
+def postComment(request, article_id):
+    if 'username' in request.session:
+        loggedin = True
+        if request.method == "POST" and 'comment' in request.POST:
+            commentToPost = request.POST["comment"]
+            userEmail = AppUser.objects.get(pk=request.session['username'])
+            article = Article.objects.get(pk=article_id)
+            if commentToPost != "":
+                comment = Comments(content=commentToPost, article_id=article , user_id=userEmail)
+                comment.save()
+                return redirect("/news/"+article_id)
+
+            else:
+                return HttpResponse("Cannot post empty comment")
+        else:
+            return HttpResponse("Something went wrong. Try Again.")
+    else:
+        loggedin = False
+        return HttpResponse("Login to post Comments")
+
 def registerUser(request):
     if 'email' in request.POST:
         email = request.POST["email"]

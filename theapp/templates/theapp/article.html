@@ -15,4 +15,16 @@
         </div>
     {% endfor %}
     </div>
+    {% if loggedin %}
+        <div class="form-group" style="width: 30%">
+            <form method="post" action="/postcomment/{{ article.id }}/">
+                {% csrf_token %}
+              <label for="comment">Comment:</label>
+              <textarea class="form-control" rows="5" id="comment" name = "comment"></textarea>
+              <button type="submit" id="submitComment" class="btn btn-primary" style="margin-top: 1em">Post Comment</button>
+            </form>
+        </div>
+    {% else %}
+        <span>Login to post comments.</span>
+    {% endif %}
 {% endblock content %}
