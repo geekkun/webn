@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0940f7de-ce87-48f1-a10d-7402d4d857c4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/theapp/static/theapp/profile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/theapp/templates/theapp/changePassword.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theapp/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/theapp/migrations/0001_initial.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theapp/models.py" afterPath="$PROJECT_DIR$/theapp/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theapp/templates/theapp/newBase.html" afterPath="$PROJECT_DIR$/theapp/templates/theapp/newBase.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theapp/templates/theapp/profile.html" afterPath="$PROJECT_DIR$/theapp/templates/theapp/profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theapp/urls.py" afterPath="$PROJECT_DIR$/theapp/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theapp/views.py" afterPath="$PROJECT_DIR$/theapp/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theapp/static/theapp/profile.js" afterPath="$PROJECT_DIR$/theapp/static/theapp/profile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theapp/templates/theapp/changePassword.html" afterPath="$PROJECT_DIR$/theapp/templates/theapp/changePassword.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,8 +27,8 @@
       <file leaf-file-name="changePassword.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/theapp/templates/theapp/changePassword.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="165">
+              <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -52,28 +44,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/theapp/migrations/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="0005_auto_20171129_1114.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/theapp/migrations/0005_auto_20171129_1114.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="0004_auto_20171129_1107.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/theapp/migrations/0004_auto_20171129_1107.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -114,11 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="profile.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/theapp/static/theapp/profile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="51" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+            <state relative-caret-position="60">
+              <caret line="4" column="8" lean-forward="false" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -161,13 +133,13 @@
         <option value="$PROJECT_DIR$/theapp/templates/theapp/login.html" />
         <option value="$PROJECT_DIR$/theapp/static/theapp/ajax.js" />
         <option value="$PROJECT_DIR$/requirements.txt" />
-        <option value="$PROJECT_DIR$/theapp/static/theapp/profile.js" />
         <option value="$PROJECT_DIR$/theapp/templates/theapp/newBase.html" />
         <option value="$PROJECT_DIR$/theapp/views.py" />
         <option value="$PROJECT_DIR$/theapp/urls.py" />
-        <option value="$PROJECT_DIR$/theapp/templates/theapp/changePassword.html" />
         <option value="$PROJECT_DIR$/theapp/templates/theapp/profile.html" />
         <option value="$PROJECT_DIR$/theapp/models.py" />
+        <option value="$PROJECT_DIR$/theapp/templates/theapp/changePassword.html" />
+        <option value="$PROJECT_DIR$/theapp/static/theapp/profile.js" />
       </list>
     </option>
   </component>
@@ -583,30 +555,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/theapp/static/theapp/profile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="51" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theapp/templates/theapp/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theapp/templates/theapp/changePassword.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/theapp/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="592">
@@ -641,7 +589,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/theapp/migrations/0005_auto_20171129_1114.py">
+    <entry file="file://$PROJECT_DIR$/theapp/migrations/0004_auto_20171129_1107.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -649,7 +597,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/theapp/migrations/0004_auto_20171129_1107.py">
+    <entry file="file://$PROJECT_DIR$/theapp/migrations/0005_auto_20171129_1114.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -661,6 +609,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theapp/templates/theapp/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theapp/templates/theapp/changePassword.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theapp/static/theapp/profile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="8" lean-forward="false" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
           <folding />
         </state>
       </provider>
