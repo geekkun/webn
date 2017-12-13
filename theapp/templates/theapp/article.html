@@ -39,12 +39,9 @@
               <button type="submit" id="submitComment" class="btn btn-primary" style="margin-top: 1em">Post Comment</button>
             </form>
         </div>
-    <form method="post" action="/likeDislike/">
-                {% csrf_token %}
         <div class="form-group" style="width: 30%">
-              <button type="submit" value="like" id="likeDislike" class="btn btn-primary" style="margin-top: 1em">Like</button> &nbsp <button type="submit" id="likeDislike2" value="dislike" class="btn btn-primary" style="margin-top: 1em">Dislike</button>
+              <button type="submit" value="like" id="likeDislike" class="btn btn-primary" style="margin-top: 1em">like</button> &nbsp <button type="submit" id="likeDislike2" value="dislike" class="btn btn-primary" style="margin-top: 1em">dislike</button>
         </div>
-    </form>>
     {% else %}
         <span>Login to post comments or like articles.</span>
     {% endif %}

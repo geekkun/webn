@@ -2,6 +2,7 @@ $(function(){
 
 		 $('#likeDislike').on('click',function () {
 		     window.alert('In LD')
+             window.alert($("input[name=csrfmiddlewaretoken]").val())
             $.ajax({
                 type: 'POST',
                 url: '/likeDislike/',
