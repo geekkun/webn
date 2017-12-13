@@ -10,7 +10,13 @@
     {% for object in comments %}
         <div class="col-xs-12 col-sm-6 col-md-8">
         </br>
-        <b>{{ object.user_id }}</b> wrote </br>
+        <b>{{ object.user_id }}</b> wrote
+        {% if loggedin %}
+            {% if {{object.user_id == user.email}} %}
+                <h2>logged in</h2>
+            {% endif %}
+        {% endif %}
+            </br>
         <p>{{ object.content }}</p>
         </div>
     {% endfor %}

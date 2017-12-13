@@ -224,9 +224,11 @@ def business(request):
 def article(request, article_id):
     article = get_object_or_404(Article, pk=article_id)
     comm = Comments.objects.filter(article_id=article_id)
+    user = None
     if 'username' in request.session:
         loggedin = True
+        user = AppUser.objects.get(pk=request.session['username'])
     else:
         loggedin = False
     return render(request, 'theapp/article.html', {'article': article,
-        'loggedin':loggedin, 'comments': comm})
+        'loggedin':loggedin, 'comments': comm, 'user':user})
