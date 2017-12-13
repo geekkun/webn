@@ -13,7 +13,7 @@
         <b>{{ object.user_id }}</b> wrote
         {% if loggedin %}
             {% ifequal object.user_id.email user.email %}
-                <a href="/deletecomment/{{object.id}}">
+                <a href="/deletecomment/{{object.id}}/{{ article.id }}">
                     <span class="glyphicon glyphicon-remove"></span>
                 </a>
             {% endifequal %}

@@ -34,6 +34,7 @@ urlpatterns = [
     url(r'^(?i)news/bs', views.business),
     url(r'^news/(?P<article_id>[0-9]+)/$', views.article),
     url(r'^postcomment/(?P<article_id>[0-9]+)/$', views.postComment),
+    url(r'^deletecomment/(?P<comment_id>[0-9]+)/(?P<article_id>[0-9]+)/$', views.deleteComment),
     url(r'^profile/$', views.profile, name='profile'),
     
 
