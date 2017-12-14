@@ -1,6 +1,8 @@
 {% extends "theapp/newBase.html" %}
 {% block content %}
 {% load staticfiles %}
+<script src="{% static 'theapp/profilechange.js' %}"></script>
+
 <div class='main'>
 <h3>Your Profile</h3>
 <form method='POST' action='/profile/' enctype='multipart/form-data'>
@@ -16,10 +18,15 @@
 	        <input type='text area' maxlength='50' id='name' name='fname' value={{first_name}}>
 	<br>
 
-   <input type='submit' id="submit_but" value='Save Profile'>
+    <button type='submit' id="submit_but" value='Save Profile'>
+        Save Profile
+    </button>
 </form>
 
 <span class='fieldname'>To change your password, click <a href="/changePassword/">here:</a> </span>
 <span class='fieldname'>{{message}} </span>
 </div>
+<span id='info'></span><br>
+    <span id='info2'></span>
+<span id='info3'></span>
 {% endblock %}

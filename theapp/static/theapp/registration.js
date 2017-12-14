@@ -19,7 +19,17 @@ function checkuseranswer(data, textStatus, jqHXR)
       $('#info2').html('');
   return emailReg.test( email );
 }
-
+function validatePhone(number) {
+    var filter = /^[0-9-+]+$/;
+    if (filter.test(number)) {
+        $('#info3').html('');
+        return true;
+    }
+    else {
+        $('#info3').html('Invalid phone number');
+        return false;
+    }
+}
 $(function(){
      $('#email').on('change',function () {
         $.ajax({
@@ -39,7 +49,7 @@ $('#email,#pwd, #name, #phone').on('blur focus keyup',function () {
 
     console.log('changed')
 
-        if(validateEmail(($('#email')).val())&&$('#email').val()!=''&&($('#pwd')).val()!=''&&($('#name')).val()!=''&&($('#phone')).val()!=''&&$('#info').text()!="This username is already taken, please choose a different one"){
+        if(validateEmail(($('#email')).val())&&$('#email').val()!=''&&($('#pwd')).val()!=''&&($('#name')).val()!=''&&($('#phone')).val()!=''&&$('#info').text()!="This username is already taken, please choose a different one"&&validatePhone(($('#phone')).val())){
 
             $('#submButton').attr("disabled", false);
         }
