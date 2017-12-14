@@ -3,30 +3,38 @@
 {% load staticfiles %}
 <script src="{% static 'theapp/profilechange.js' %}"></script>
 
-<div class='main'>
-<h3>Your Profile</h3>
-<form method='POST' action='/profile/' enctype='multipart/form-data'>
+<div class="container">
+<form style="margin: auto" method='POST' action='/profile/' enctype='multipart/form-data'>
   	{% csrf_token %}
+	<h3>Your Profile</h3>
 	<h3>Enter or edit your details </h3>
-	<span class='fieldname'>Email address</span>
-            <input type='email' maxlength='50' id='logusername' name='email' value={{email_addr}}>
-	<br>
-	<span class='fieldname'>Phone number</span>
-	        <input type='text' maxlength='50' id='loguserphone' name='phone' value={{phone}}>
-	<br>
-	<span class='fieldname'>Name</span>
-	        <input type='text area' maxlength='50' id='name' name='fname' value={{first_name}}>
-	<br>
 
-    <button type='submit' id="submit_but" value='Save Profile'>
+	<div style="width: 60%" class="input-group">
+		<span class="input-group-addon">Username</span>
+			<input type='email' class="form-control" maxlength='50' id='logusername' name='email' value={{email_addr}}>
+
+  	</div>
+	<br/>
+	<div style="width: 60%" class="input-group">
+		<span style="width: 13.25%" class="input-group-addon">Phone</span>
+		<input type='text' class="form-control" maxlength='50' id='loguserphone' name='phone' value={{phone}}>
+	</div>
+	<br/>
+	<div style="width: 60%" class="input-group">
+		<span style="width: 13.25%" class="input-group-addon">Name</span>
+		<input type='text area' class="form-control" maxlength='50' id='name' name='fname' value={{first_name}}>
+	</div>
+	<br/>
+    <button type='submit' class="btn btn-primary" id="submit_but" value='Save Profile'>
         Save Profile
     </button>
+	<br/>
+	<span id='info'></span><br>
+    <span id='info2'></span>
+<span id='info3'></span>
 </form>
 
 <span class='fieldname'>To change your password, click <a href="/changePassword/">here:</a> </span>
 <span class='fieldname'>{{message}} </span>
 </div>
-<span id='info'></span><br>
-    <span id='info2'></span>
-<span id='info3'></span>
 {% endblock %}

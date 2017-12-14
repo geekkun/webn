@@ -4,6 +4,7 @@
     console.log(email)
   if (!emailReg.test( email )){
     $('#info2').html('Invalid email address');
+    $('#info2').css("color", "red");
   }
   else
       $('#info2').html('');
@@ -17,6 +18,7 @@ function validatePhone(number) {
     }
     else {
         $('#info3').html('Invalid phone number');
+        $('#info3').css("color", "red");
         return false;
     }
 }

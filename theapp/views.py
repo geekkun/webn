@@ -110,14 +110,14 @@ def checkUsername(request):
         try:
             member = AppUser.objects.get(pk=u)
             if action=='regitsration':
-             return HttpResponse("<span>This username is already taken, please choose a different one</span>")
+             return HttpResponse("<span style='color: red'>This username is already taken, please choose a different one</span>")
             else:
-             return HttpResponse(" <span>Valid username</span>")
+             return HttpResponse(" <span style='color: green'>Valid username</span>")
         except AppUser.DoesNotExist:
             if action == 'regitsration':
-             return HttpResponse("<span> Username is free to use</span>")
+             return HttpResponse("<span style='color: green'> Username is free to use</span>")
             else:
-                return HttpResponse("<span>Unknown username</span>")
+                return HttpResponse("<span style='color: red'>Unknown username</span>")
     else:
         return HttpResponse("")
 
