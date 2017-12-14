@@ -11,7 +11,14 @@ import json
 appname = 'Newspaper'
 
 
-# Create your views here.
+def loggedin(f):
+    def test(request):
+        if 'username' in request.session:
+            return f(request)
+        else:
+            return render(request, 'theapp/not-logged-in.html', {})
+    return test
+
 def index(request):
     return render(request, 'theapp/signup.html')
 
@@ -24,9 +31,10 @@ def deleteComment(request, comment_id, article_id):
         loggedin = False
         return HttpResponse("Login to delete comment")
 
+@loggedin
 def postComment(request, article_id):
-    if 'username' in request.session:
-        loggedin = True
+    # if 'username' in request.session:
+    #     loggedin = True
         if request.method == "POST" and 'comment' in request.POST:
             commentToPost = request.POST["comment"]
             userEmail = AppUser.objects.get(pk=request.session['username'])
@@ -40,9 +48,9 @@ def postComment(request, article_id):
                 return HttpResponse("Cannot post empty comment")
         else:
             return HttpResponse("Something went wrong. Try Again.")
-    else:
-        loggedin = False
-        return HttpResponse("Login to post Comments")
+    # else:
+    #     loggedin = False
+    #     return HttpResponse("Login to post Comments")
 
 def registerUser(request):
     if 'email' in request.POST:
@@ -58,13 +66,7 @@ def registerUser(request):
         return HttpResponse('Failed')
 
 # decorator that tests whether user is logged in
-def loggedin(f):
-    def test(request):
-        if 'username' in request.session:
-            return f(request)
-        else:
-            return render(request, 'theapp/not-logged-in.html', {})
-    return test
+
 
 def login(request):
     if 'username' in request.session:
@@ -150,6 +152,7 @@ def profile(request):
         'first_name':first_name,
         'loggedin': True}
         )
+@loggedin
 def changePassword(request):
     u = request.session['username']
     member = AppUser.objects.get(pk=u)
@@ -172,7 +175,7 @@ def changePassword(request):
         )
 
 
-    
+
 def news(request):
     template = loader.get_template('theapp/news.html')
     articles = Article.objects.all()
@@ -186,7 +189,7 @@ def news(request):
     }
     return HttpResponse(template.render(context,request))
 
-
+@loggedin
 def checkpassword(request):
     username = request.session['username']
     ip = request.GET['passw']
