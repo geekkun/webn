@@ -3,8 +3,8 @@
 {% load staticfiles %}
 
 {% block content %}
-<script src="{% static 'mainapp/jquery-1.11.2.js' %}"></script>
-<script src="{% static 'mainapp/ajax.js' %}"></script>
+
+<script src="{% static 'theapp/registration.js' %}"></script>
 
 <br>
 <br>
@@ -29,8 +29,10 @@
     <label class="sr-only" for="pwd">Phone:</label>
     <input type="text" class="form-control" id="phone" name = "phone" placeholder="Enter Phone">
   </div>
-  <button type="submit" class="btn btn-primary">Signup</button>
+  <button type="submit" class="btn btn-primary" id="submButton" disabled>Signup</button>
     </form>
+  <span id='info'></span><br>
+    <span id='info2'></span>
 
 
 

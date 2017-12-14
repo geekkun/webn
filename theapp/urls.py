@@ -26,7 +26,7 @@ urlpatterns = [
     # logout page
     url(r'^logout/$', views.logout, name='logout'),
     # Ajax: check if user exists on login page
-    url(r'^logcheckuser/$', views.logCheckUser, name='logCheckUser'),
+    url(r'^checkUsername/$', views.checkUsername, name='checkUsername'),
     url(r'^checkpassword/$', views.checkpassword, name='logout'),
     url(r'^changePassword/$', views.changePassword, name='changePassword'),
     url(r'^news/$', views.news),

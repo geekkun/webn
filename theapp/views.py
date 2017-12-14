@@ -10,7 +10,7 @@ import json
 
 appname = 'Newspaper'
 
-
+#  this decorator  tests whether user is logged in or not; it is used for some views to make sure that the person is logged in. based on the SocialNetwork app
 def loggedin(f):
     def test(request):
         if 'username' in request.session:
@@ -22,35 +22,28 @@ def loggedin(f):
 def index(request):
     return render(request, 'theapp/signup.html')
 
+@loggedin
 def deleteComment(request, comment_id, article_id):
-    if 'username' in request.session:
-        loggedin = True
-        Comments.objects.filter(id=comment_id).delete()
-        return redirect("/news/" + article_id)
-    else:
-        loggedin = False
-        return HttpResponse("Login to delete comment")
+    Comments.objects.filter(id=comment_id).delete()
+    return redirect("/news/" + article_id)
+
 
 @loggedin
 def postComment(request, article_id):
-    # if 'username' in request.session:
-    #     loggedin = True
-        if request.method == "POST" and 'comment' in request.POST:
-            commentToPost = request.POST["comment"]
-            userEmail = AppUser.objects.get(pk=request.session['username'])
-            article = Article.objects.get(pk=article_id)
-            if commentToPost != "":
-                comment = Comments(content=commentToPost, article_id=article , user_id=userEmail)
-                comment.save()
-                return redirect("/news/"+article_id)
 
-            else:
-                return HttpResponse("Cannot post empty comment")
+     if request.method == "POST" and 'comment' in request.POST:
+        commentToPost = request.POST["comment"]
+        userEmail = AppUser.objects.get(pk=request.session['username'])
+        article = Article.objects.get(pk=article_id)
+        if commentToPost != "":
+         comment = Comments(content=commentToPost, article_id=article , user_id=userEmail)
+         comment.save()
+         return redirect("/news/"+article_id)
         else:
-            return HttpResponse("Something went wrong. Try Again.")
-    # else:
-    #     loggedin = False
-    #     return HttpResponse("Login to post Comments")
+         return HttpResponse("Cannot post empty comment")
+     else:
+         return HttpResponse("Something went wrong. Try Again.")
+
 
 def registerUser(request):
     if 'email' in request.POST:
@@ -64,8 +57,6 @@ def registerUser(request):
         return redirect("/login/", context = mymessage)
     else:
         return HttpResponse('Failed')
-
-# decorator that tests whether user is logged in
 
 
 def login(request):
@@ -111,14 +102,22 @@ def logout(request):
     else:
         raise Http404("Can't logout, you are not logged in")
 
-def logCheckUser(request):
+
+def checkUsername(request):
     if 'username' in request.POST:
         u = request.POST['username']
+        action = request.POST['action']
         try:
             member = AppUser.objects.get(pk=u)
-            return HttpResponse("<span class='available'>&nbsp;&#x2714; Valid username</span>")
+            if action=='regitsration':
+             return HttpResponse("<span>This username is already taken, please choose a different one</span>")
+            else:
+             return HttpResponse(" <span>Valid username</span>")
         except AppUser.DoesNotExist:
-            return HttpResponse("<span class='taken'>&nbsp;&#x2718; Unknown username</span>")
+            if action == 'regitsration':
+             return HttpResponse("<span> Username is free to use</span>")
+            else:
+                return HttpResponse("<span>Unknown username</span>")
     else:
         return HttpResponse("")
 

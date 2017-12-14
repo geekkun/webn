@@ -2,8 +2,7 @@
 {% load staticfiles %}
 
 {% block content %}
-<script src="{% static 'theapp/ajax.js' %}"></script>
-
+<script src="{% static 'theapp/login.js' %}"></script>
 <br>
 <br>
 <div class='main'>
@@ -23,7 +22,7 @@
             <span class='fieldname'>Password</span>
             <input type='password' maxlength='25' name='password'><br>
             <span class='fieldname'>&nbsp;</span>
-            <input type='submit' value='Login'>
+            <button type="submit" value='Login' disabled id = "submButton">Login</button>
 
         </form>
     {% endif %}
