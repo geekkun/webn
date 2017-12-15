@@ -22,13 +22,12 @@ def loggedin(f):
 def index(request):
     return render(request, 'theapp/signup.html')
 
-@loggedin
+
 def deleteComment(request, comment_id, article_id):
     Comments.objects.filter(id=comment_id).delete()
     return redirect("/news/" + article_id)
 
 
-@loggedin
 def postComment(request, article_id):
 
      if request.method == "POST" and 'comment' in request.POST:
