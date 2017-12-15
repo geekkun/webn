@@ -8,9 +8,9 @@
     <span></span><p>{{ article.body }}</p>
     <span>Likes:</span><p id="allLikes"> {{ likes }}</p>
     <span>Dislikes:</span> <p id="allDislikes"> {{ dislikes }}</p>
-    <span>UserLikes:</span><p id="userLikes"> {{ userLike }}</p>
-    <span>UserDislikes</span><p id="userDislikes"> {{ userDislike }}</p>
-    <span id="test">{{ article.id }}</span>
+    <p id="userLikes" class="hidden"> {{ userLike }}</p>
+    <p id="userDislikes" class="hidden"> {{ userDislike }}</p>
+    <span id="test" class = "hidden">{{ article.id }}</span>
     </br>
     <h4>Comments</h4>
     <div class="row">

@@ -1,6 +1,7 @@
 {% extends "theapp/newBase.html" %}
 
 {% block content %}
+<div class = "container">
     {% if request.get_full_path == '/news/' %}
         <h2>All news</h2>
     {% elif request.get_full_path == '/news/sp/' or request.get_full_path == '/news/SP/' %}
@@ -19,4 +20,5 @@
 
     {% endfor %}
     </div>
+</div>
 {% endblock content %}
