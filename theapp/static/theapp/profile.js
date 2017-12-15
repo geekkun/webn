@@ -5,6 +5,7 @@ $(function(){
 		}
 		if ($('#np').val() == $('#np_confirm').val()&&$('#np').val()!='') {
 		 $('#message').html('Matching').css('color', 'green');
+		 $('#np, #np_confirm').css('border-color', 'green');
 		 if($('#passmessage').html()=='Correct'){
 		    $('#submit_but').removeAttr("disabled");
 		 }
@@ -16,6 +17,7 @@ $(function(){
         else {
 			$('#message').html('Not Matching').css('color', 'red');
 			$('#submit_but').attr("disabled",'disabled');
+			$('#np #np_confirm').css('border-color', '#ccc');
 		    }
 
 		});
@@ -31,13 +33,17 @@ $(function(){
                 success: function() {
                     var data = $.parseJSON(this.success.arguments[0])
                     if (data.list == 'True'&&$('#op').val()) {
-                        $('#passmessage').html('Correct').css('color', 'green');
+                        $('#passmessage').html('Correct');
+                        $('#op').css('border-color', 'green');
+
                     }
                     if (data.list == 'False'&&$('#op').val()) {
-                        $('#passmessage').html('Wrong').css('color', 'red');
+                        $('#op').css('border-color', 'red');
+                        $('#passmessage').html('Incorrect');
                     }
                     if(!$('#op').val()){
-                        $('#passmessage').html('')
+                        $('#passmessage').css('border-color','#ccc');
+                        $('#passmessage').html('');
                     }
 
 

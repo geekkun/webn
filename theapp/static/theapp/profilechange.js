@@ -1,24 +1,28 @@
- function validateEmail(email) {
-    console.log('validating')
+ //https://stackoverflow.com/questions/2507030/email-validation-using-jquery
+function validateEmail(email) {
   var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-    console.log(email)
   if (!emailReg.test( email )){
+       console.log('here')
     $('#info2').html('Invalid email address');
-    $('#info2').css("color", "red");
+    $('#logusername').css("border-color", "red");
   }
-  else
+  else {
       $('#info2').html('');
+      $('#logusername').css("border-color", "green");
+  }
+
   return emailReg.test( email );
 }
 function validatePhone(number) {
     var filter = /^[0-9-+]+$/;
     if (filter.test(number)) {
         $('#info3').html('');
+        $('#loguserphone').css("border-color", "green");
         return true;
     }
     else {
-        $('#info3').html('Invalid phone number');
-        $('#info3').css("color", "red");
+        $('#phone').html('Invalid phone number');
+        $('#loguserphone').css("border-color", "red");
         return false;
     }
 }

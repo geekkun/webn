@@ -4,9 +4,13 @@ function checkuseranswer(data, textStatus, jqHXR)
 	$('#info').html(data);
 	if($('#info').text()=="Unknown username"){
         $('#submButton').attr("disabled", true);
+        window.alert($('#logusername').css('border-color'))
+        $('#logusername').css('border-color', 'red');
+
     }
     else{
 	    $('#submButton').attr("disabled", false);
+	    $('#logusername').css('border-color', '#ccc');
     }
 }
 
