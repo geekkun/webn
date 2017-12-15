@@ -1,3 +1,4 @@
+//this function is used validate and apply css styling to input fields and buttons in profile webpage
 $(function(){
 		$('#np, #np_confirm, #op').on('keyup', function () {
 		if($('#passmessage').html()!='Correct'){
@@ -22,6 +23,7 @@ $(function(){
 
 		});
 
+		//ajax call to checkpassword function in views
 		 $('#op').bind('input propertychange',function () {
             $.ajax({
                 type: 'GET',

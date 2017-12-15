@@ -1,5 +1,5 @@
 
-
+//this function is used to make an ajax request to call likedislike function in views.
 $(function(){
     checkButtons();
 
@@ -51,7 +51,7 @@ $(function(){
 
 	});
 
-
+//this function is used to enable/disable like or dislike button taking into consideration what user has selected
 function checkButtons() {
 
      if(parseInt($('#userLikes').text())==1){

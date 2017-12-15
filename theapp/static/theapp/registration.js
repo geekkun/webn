@@ -1,4 +1,4 @@
-
+//function used by ajax call where usernamecheck is called this function is called on success
 function checkuseranswer(data, textStatus, jqHXR)
 {
 	if($('#email').val()&&validateEmail($('#email').val())) {
@@ -12,6 +12,7 @@ function checkuseranswer(data, textStatus, jqHXR)
 
 }
  //https://stackoverflow.com/questions/2507030/email-validation-using-jquery
+//function used to apply some styling when validating email in signup webpage
  function validateEmail(email) {
   var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
   if (!emailReg.test( email )){
@@ -23,6 +24,7 @@ function checkuseranswer(data, textStatus, jqHXR)
   }
   return emailReg.test( email );
 }
+//fucntion used to apply some styling when validating phone number in signup webpage
 function validatePhone(number) {
     var filter = /^[0-9-+]+$/;
     if (filter.test(number)) {
@@ -37,6 +39,7 @@ function validatePhone(number) {
         return false;
     }
 }
+//function used to make an ajax call to checkusername function in views.
 $(function(){
      $('#email').on('change',function () {
         $.ajax({
@@ -52,6 +55,7 @@ $(function(){
         });
     });
 
+//function used to apply styling to signup webpage when validating user input
 $('#email,#pwd, #name, #phone').on('blur focus keyup',function () {
     if(!$('#email').val()){
         $('#email').css('border-color', '#ccc');

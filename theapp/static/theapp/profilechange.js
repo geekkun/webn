@@ -1,5 +1,6 @@
  //https://stackoverflow.com/questions/2507030/email-validation-using-jquery
-function validateEmail(email) {
+ //this function is used validate and apply css styling to input fields and buttons in profile webpage
+ function validateEmail(email) {
   var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
   if (!emailReg.test( email )){
        console.log('here')
@@ -13,6 +14,7 @@ function validateEmail(email) {
 
   return emailReg.test( email );
 }
+//function used to validate phone number in profile webpage
 function validatePhone(number) {
     var filter = /^[0-9-+]+$/;
     if (filter.test(number)) {
@@ -27,6 +29,7 @@ function validatePhone(number) {
     }
 }
 
+
 function checkuseranswer(data, textStatus, jqHXR)
 {
 	$('#info').html(data);
@@ -37,6 +40,7 @@ function checkuseranswer(data, textStatus, jqHXR)
 
 }
 
+//function used to make an ajax call to checkusername function in views
 $(function(){
     $originalEmail = $('#logusername').val()
      $('#logusername').on('change',function () {
@@ -54,7 +58,7 @@ $(function(){
              });
          }
     });
-
+//function used to make some more validations for profile webpage
 $('#logusername, #loguserphone, #name').on('blur focus keyup',function () {
 
     // console.log('changed')

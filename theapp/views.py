@@ -19,15 +19,16 @@ def loggedin(f):
             return render(request, 'theapp/not-logged-in.html', {})
     return test
 
+#function which renders the main page
 def index(request):
-    return render(request, 'theapp/signup.html')
+    return render(request, 'theapp/news.html')
 
-
+#this function is used to delete a comment, it is only available when the user is loged in
 def deleteComment(request, comment_id, article_id):
     Comments.objects.filter(id=comment_id).delete()
     return redirect("/news/" + article_id)
 
-
+#this function is used to post a commment, it is only available when the user is loged in
 def postComment(request, article_id):
 
      if request.method == "POST" and 'comment' in request.POST:
@@ -43,7 +44,7 @@ def postComment(request, article_id):
      else:
          return HttpResponse("Something went wrong. Try Again.")
 
-
+#function used to register a new user. Called from signup page.
 def registerUser(request):
     if 'email' in request.POST:
         email = request.POST["email"]
@@ -57,7 +58,7 @@ def registerUser(request):
     else:
         return HttpResponse('Failed')
 
-
+#function used to login the user.
 def login(request):
     if 'username' in request.session:
         print('user is already logged in')
@@ -88,6 +89,7 @@ def login(request):
             print (p)
             return HttpResponse("Wrong password")
 
+#function used to logout user
 @loggedin
 def logout(request):
     if 'username' in request.session:
@@ -101,7 +103,7 @@ def logout(request):
     else:
         raise Http404("Can't logout, you are not logged in")
 
-
+#validating function called from ajax request, checks if the username is taken or free.
 def checkUsername(request):
     if 'username' in request.POST:
         u = request.POST['username']
@@ -120,6 +122,7 @@ def checkUsername(request):
     else:
         return HttpResponse("")
 
+#function used to update the user profile details
 @loggedin
 def profile(request):
     u = request.session['username']
@@ -150,6 +153,8 @@ def profile(request):
         'first_name':first_name,
         'loggedin': True}
         )
+
+#function used to change user login password
 @loggedin
 def changePassword(request):
     u = request.session['username']
@@ -173,7 +178,7 @@ def changePassword(request):
         )
 
 
-
+#function which gets all the articles and passes it to rendered /news page
 def news(request):
     template = loader.get_template('theapp/news.html')
     articles = Article.objects.all()
@@ -187,6 +192,7 @@ def news(request):
     }
     return HttpResponse(template.render(context,request))
 
+#function which if the password is correct or not. Used for ajax request when user tries to change their password
 @loggedin
 def checkpassword(request):
     username = request.session['username']
@@ -204,7 +210,7 @@ def checkpassword(request):
 
 
 
-
+#function used to get and pass all sport articles to rendered page
 def sport(request):
     template = loader.get_template('theapp/news.html')
     articles = Article.objects.filter(category="SP")
@@ -218,6 +224,8 @@ def sport(request):
     }
     return HttpResponse(template.render(context, request))
 
+
+#function used to get and pass all business articles to rendered page
 def business(request):
     template = loader.get_template('theapp/news.html')
     articles = Article.objects.filter(category='BS')
@@ -231,6 +239,7 @@ def business(request):
     }
     return HttpResponse(template.render(context, request))
 
+#function used to get and pass information about each article to rendered page
 def article(request, article_id):
     article = get_object_or_404(Article, pk=article_id)
     comm = Comments.objects.filter(article_id=article_id)
@@ -256,6 +265,7 @@ def article(request, article_id):
     return render(request, 'theapp/article.html', {'article': article,
         'loggedin':loggedin, 'comments': comm, 'user':user, 'likes': likes, 'dislikes':dislikes, 'userLike':userLike, 'userDislike':userDislike})
 
+#function used when users like or dislike the articles
 @loggedin
 def likeDislike(request):
      likeOrDislike = request.POST['ld']

@@ -1,4 +1,4 @@
-
+//this function is used validate and apply css styling to input fields and buttons in login webpage
 function checkuseranswer(data, textStatus, jqHXR)
 {
 	$('#info').html(data);
@@ -14,6 +14,7 @@ function checkuseranswer(data, textStatus, jqHXR)
     }
 }
 
+//this function is used to make an ajax request to cal checkUsername function in views.
 $(function(){
      $('#logusername').on('change',function () {
         $.ajax({
