@@ -11,32 +11,32 @@
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
-    {% block menu %}
+    <!--{% block menu %}-->
         <header>
             <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/news/">News Website</a>
-    </div>
-    <ul class="nav navbar-nav">
-     <li class="active"><li><a href="/news/">Home</a></li>
-            <li><a href="/news/bs/">Business</a></li>
-            <li><a href="/news/sp/">Sport</a></li>
-    </ul>
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="/news/">News Website</a>
+                </div>
+                <ul class="nav navbar-nav">
+                 <li class="active"><li><a href="/news/">Home</a></li>
+                        <li><a href="/news/bs/">Business</a></li>
+                        <li><a href="/news/sp/">Sport</a></li>
+                </ul>
 
-    <ul class="nav navbar-nav navbar-right">
-        {% if loggedin %}
-        <li><a href="/profile"><span class="glyphicon glyphicon-profile"></span>My profile</a></li>
-        <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
-        {% else %}
-      <li><a href="/"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="/login/"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        {% endif %}
-    </ul>
-  </div>
-</nav>
+                <ul class="nav navbar-nav navbar-right">
+                    {% if loggedin %}
+                    <li><a href="/profile"><span class="glyphicon glyphicon-profile"></span>My profile</a></li>
+                    <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+                    {% else %}
+                  <li><a href="/"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                  <li><a href="/login/"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    {% endif %}
+                </ul>
+              </div>
+            </nav>
         </header>
-    {% endblock menu %}
-    <div class = "container">{% block content %}{% endblock content %}</div>
+    <!--{% endblock menu %}-->
+    <main class = "container" role="main">{% block content %}{% endblock content %}</main>
     </body>
 </html>
